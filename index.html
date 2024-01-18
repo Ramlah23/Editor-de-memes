@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Editor de memes</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">Generador de Memes</h1>
+        <div class="boton-contenedor">
+          <button class="boton" id="panel-img-boton">
+              <i class="fas fa-image" aria-hidden="true"></i> Imagen
+          </button>
+          <button class="boton" id="panel-text-boton">
+            <i class="fas fa-font" aria-hidden="true"></i>Texto
+          </button>
+          <button class="boton" id="miBoton" class="modo-claro" onclick="toggleModo()">Modo Claro</button>
+          </button>
+         </button>
+          </div>
+    </header>
+    <main class="contenedor-principal">
+        <div class="contenedor-secundario">
+            <p class="subtitulo">TEXTO SUPERIOR</p>
+        <div class="imagen-meme" src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
+            <p class="subtitulo">TEXTO INFERIOR</p>
+        </div>
+        <div class="boton-contenedor">
+        <button class="boton-descargar" type="button" class="button button-text" id="download-meme-button"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Descargar meme</button>
+        </div>
+    </main>
+    <aside class="panel1" id="panel">
+        <button class="boton-cerrar-panel" id="panel-close-button" aria-label="Cerrar panel">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <!-- IMG PANEL-->
+        <section class="panel-img" id="panel-img">
+          <h2 class="titulo-panel">IMAGEN</h2>
+          <div class="panel-control">
+            <h3 class="panel-control-title">URL</h3>
+            <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de imagen">
+          </div>
+          </section>
+    </aside>
+    
+</body>
+</html>
