@@ -40,12 +40,104 @@
         <!-- IMG PANEL-->
         <section class="panel-img" id="panel-img">
           <h2 class="titulo-panel">IMAGEN</h2>
-          <div class="panel-control">
-            <h3 class="panel-control-title">URL</h3>
-            <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de imagen">
+          <div class="contenedor-form">
+            <form id="imagen-menu" method="post" enctype="multipart/form-data">
+
+              <!--AGREGAR IMAGEN PARA EDITAR-->
+
+          <div class="seccion-menu">
+          <div class="texto-añadir-imagen">
+            <p class="añadir-imagen">AÑADE TU IMAGEN</p>
           </div>
-          </section>
+          <div class="ingreso-imagen">
+          <div class="columna-una">
+            <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL" value="" tabindex="8">
+          </div>
+          </div>
+        </div>
+  
+              <!--EDITOR DE COLORES DE IMAGEN -->
+  
+        <div class="seccion-menu">
+          <h3 class="subtitulo-panel">Fondo</h3>
+        <div class="dos-columnas">
+        <div class="columna-uno">
+          <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
+            <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
+                <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
+          </label>
+        </div>
+        <div class="columna-dos">
+      <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
+          <option value="unset">Ninguno</option>
+          <option value="lighten">Aclarar</option>
+          <option value="plus-lighter">Más Claro</option>
+          <option value="hard-light">Luz Dura</option>
+          <option value="soft-light">Luz Suave</option>
+          <option value="darken">Oscurecer</option>
+          <option value="difference">Diferencia</option>
+          <option value="luminosity">Luminosidad</option>
+          <option value="multiply">Multiplicar</option>
+          <option value="overlay">Superponer</option>
+          <option value="color-dodge">Color Esquivado</option>
+          <option value="color-burn">Color quemado</option>
+          <option value="exclusion">Exclusión</option>
+          <option value="saturation">Saturación</option>
+          <option value="hue">Matiz</option>
+      </select>
+         </div>
+       </div>
+     </div>
+  
+  <!--FILTROS DE IMAGEN-->
+
+    <div class="section-menu">
+      <h3 class="subtitulo-panel">Filtros</h3>
+    <div class="lista">
+      <label for="brightness-slider" class="tipos-de-filtros">BRILLO</label>
+      <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
+      </div>
+    <div class="lista">
+      <label for="opacity-slider" class="tipos-de-filtros">OPACIDAD</label>
+      <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
+    </div>
+    <div class="lista">
+      <label for="contrast-slider" class="tipos-de-filtros">CONTRASTE</label>
+      <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1" tabindex="14">
+    </div>
+    <div class="lista">
+      <label for="blur-slider" class="tipos-de-filtros">DESENFOQUE</label>
+      <input type="range" id="blur-slider" min="0" max="10" value="0" step="0.1" tabindex="15">
+    </div>
+    <div class="lista">
+      <label for="grayscale-slider" class="tipos-de-filtros">ESCALA DE GRISES</label>
+      <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1" tabindex="16">
+    </div>
+   <div class="lista">
+      <label for="sepia-slider" class="tipos-de-filtros">SEPIA</label>
+      <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1" tabindex="17">
+    </div>
+   <div class="lista">
+      <label for="hue-slider" class="tipos-de-filtros">HUE</label>
+      <input type="range" id="hue-slider" min="0" max="359" value="0" step="1" tabindex="18">
+    </div>
+    <div class="lista">
+      <label for="saturate-slider" class="tipos-de-filtros">SATURADO</label>
+      <input type="range" id="saturate-slider" min="100" max="1000" value="100" step="10" tabindex="19">
+    </div>
+    <div class="lista">
+      <label for="invert-slider" class="tipos-de-filtros">NEGATIVO</label>
+      <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1" tabindex="20">
+    </div>
+    <div class="boton-container">
+      <button id="restablecer-filtros" type="button" tabindex="21">Reestablecer filtros</button>
+    </div>
+  </div>
+      </form>
+    </div>
+   </section>
     </aside>
-    
+
+    <script src="index.js"></script>
 </body>
 </html>
