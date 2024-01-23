@@ -18,8 +18,10 @@
           <button class="boton" id="panel-text-boton">
             <i class="fas fa-font" aria-hidden="true"></i>Texto
           </button>
-          <button class="boton" id="miBoton" class="modo-claro" onclick="toggleModo()">Modo Claro</button>
+
+          <button class="boton" id="modoBoton" class="modo-claro" >Modo Claro</button>
           </button>
+          
          </button>
           </div>
     </header>
@@ -137,6 +139,185 @@
     </div>
    </section>
     </aside>
+<!--EDITOR DE TEXTO-->
+<aside class="panel1" id="panel">
+  <button class="boton-cerrar-panel" id="panel-close-button" aria-label="Cerrar panel">
+    <i class="fas fa-times" aria-hidden="true"></i>
+  </button>
+  <!-- text PANEL-->
+  <section class="panel-img" id="panel-img">
+    <h2 class="titulo-panel">TEXTO</h2>
+      <button type="boton" id="cerrar-texto-menu" class="custom-btn close-window" tabindex="40"><i class="fa-solid fa-xmark title-icon" aria-hidden="true"></i></button>
+  </div>
+  <div class="wrapper-menu">
+      <form id="txt-menu" method="post" enctype="multipart/form-data">
+
+          <!-- ESCRIBIR TEXTO-->
+              
+                  <div class="section-menu">
+                  <div>
+                      <label for="top-text-input">
+                          <h3>Superior</h3>
+                      </label>
+                          <div class="one-input">
+                              <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
+                          </div>
+                          <div class="two-inputs remove-option">
+                              <div class="col-1 checkbox-container">
+                                  <input type="checkbox" id="remove-top-text" tabindex="24">
+                                  <label for="remove-top-text">
+                                      Quitar texto
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                  <div>
+                      <label for="bottom-text-input">
+                          <h3>Inferior</h3>
+                      </label>
+                          <div class="one-input">
+                              <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="25"></textarea>
+                          </div>
+                          <div class="two-inputs">
+                              <div class="col-1 checkbox-container">
+                                  <input type="checkbox" id="remove-bottom-text" tabindex="26">
+                                  <label for="remove-bottom-text">
+                                      Quitar texto
+                                  </label>
+                              </div>
+                          </div>
+                  </div>
+                  </div>
+
+          <!--FONTS SECTION-->
+
+                  <div class="section-menu">
+                          <label for="text-font-family">
+                              <h3>Fuente</h3>
+                          </label>
+                          <div class="one-input">
+                              <select name="Font-family" id="select-text-font-family" class="panel-control-select" aria-label="Fuente del texto" tabindex="27">
+                                  <option value="Arial">Arial</option>
+                                  <option value="Arial Black">Arial Black</option>
+                                  <option value="American Typewriter">American Typewriter</option>
+                                  <option value="Andale Mono">Andale Mono</option>
+                                  <option value="Comic Sans MS">Comic Sans MS</option>
+                                  <option value="Helvetica">Helvetica</option>
+                                  <option value="Impact" selected="">Impact</option>
+                                  <option value="Verdana">Verdana</option>
+                                  <option value="Times New Roman">Times New Roman</option>
+                              </select>
+                          </div>
+                  </div>
+  
+          <!--FONT SIZE-->
+              
+                  <div class="section-menu">
+                          <div class="grid-cols-a">
+                              <div class="col-grid-1">
+                                  <label for="text-size-input">
+                                      <h3>Tamaño</h3>
+                                  </label>
+                                      <input type="number" name="font-size" aria-label="Tamaño de fuente" id="text-size-input" min="9" max="60" value="30" tabindex="28">
+                              </div>
+  
+                  <!--TEXT ALIGN-->
+  
+                              <div class="col-grid-2">
+                                  <h3>Alineación</h3>
+                                  <div class="align-container">
+                                      <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
+                                          <i class="fas fa-align-left" aria-hidden="true"></i>
+                                      </button>
+                                      <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
+                                          <i class="fas fa-align-center" aria-hidden="true"></i>
+                                      </button>
+                                      <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
+                                          <i class="fas fa-align-right" aria-hidden="true"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                  </div>
+              
+          <!--COLOR SECTION-->
+              
+                  <div class="section-menu">
+                      <div class="grid-cols-b">
+
+              <!--TEXT COLOR-->
+
+                          <div class="col-grid-1">
+                              <h3>Color</h3>
+                              <div>
+                                  <label for="text-color-input" id="text-color-label" class="color-select" tabindex="32">
+                                      <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto" colorpick-eyedropper-active="true">
+                                      <span id="text-color-value" aria-hidden="true">#000000</span>
+                                  </label>
+                              </div>
+                          </div>
+                          
+
+              <!--TEXT BACKGROUND COLOR-->
+
+                          <div class="col-grid-2">
+                              <h3>Fondo</h3>
+                              <label for="text-bcg-color" id="text-bgc-color-label" class="color-select" tabindex="33">
+                                  <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="Text-background-color" type="color" id="text-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
+                                  <span id="text-background-color-value" aria-hidden="true">#FFFFFF</span>
+                              </label>
+                              <div class="one-input checkbox-container">
+                                  <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" aria-label="Quitar el fondo" tabindex="34">
+                                      <label for="remove-txt-bcg-color">
+                                          Fondo transparente
+                                      </label>
+                              </div>
+                          </div> 
+                      </div>
+                  </div>
+
+          <!--OUTLINE SECTION-->
+
+                  <div class="section-menu">
+                          <h3>Contorno</h3>
+                          <div class="one-input">
+                              <button type="button" class="custom-btn" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
+                              <button type="button" class="custom-btn" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
+                              <button type="button" class="custom-btn" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
+                          </div>
+                  </div>
+              
+          <!--PADDING SECTION-->
+
+                  <div class="section-menu">
+                          <div class="grid-cols-b">    
+                              <div class="col-grid-1">
+                                  <label for="padding-input">
+                                      <h3>Espaciado</h3>
+                                  </label>
+                                  <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50" value="35" tabindex="38">
+                              </div>
+  
+          <!--LINE HEIGHT SECTION-->
+  
+                              <div class="col-grid-2">
+                                  <label for="line-height-select">
+                                      <h3>Interlineado</h3>
+                                  </label>
+                                  <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="39">
+                                      <option value="0.8">0.8</option>
+                                      <option value="1">1</option>
+                                      <option value="1.2" selected="">1.2</option>
+                                      <option value="1.5">1.5</option>
+                                      <option value="2">2</option>
+                                      <option value="2.5">2.5</option>
+                                  </select>
+                              </div>
+                          </div>
+                  </div>
+      </form>
+  </div>
+</aside>
 
     <script src="index.js"></script>
 </body>

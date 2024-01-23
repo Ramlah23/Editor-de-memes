@@ -1,20 +1,13 @@
-let miBoton = document.getElementById('miBoton');
-    let body = document.body;
+document.addEventListener('DOMContentLoaded', function () {
+    let modoBoton = document.getElementById('modoBoton');
 
-    function toggleModo() {
-        body.classList.toggle('modo-claro');
-        body.classList.toggle('modo-oscuro');
+    modoBoton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        actualizarTextoBoton();
+    });
 
-        // Cambiar el texto del botón
-        if (body.classList.contains('modo-claro')) {
-            miBoton.textContent = 'Modo Claro';
-        } else {
-            miBoton.textContent = 'Modo Oscuro';
-        }
+    function actualizarTextoBoton() {
+        let modoActual = document.body.classList.contains('dark-mode') ? 'Modo Oscuro' : 'Modo Claro';
+        modoBoton.textContent = modoActual;
     }
-
-    // Agregar evento al botón
-    miBoton.addEventListener('click', toggleModo);
-
-    // Agregar evento al body
-    body.addEventListener('click', toggleModo);
+});

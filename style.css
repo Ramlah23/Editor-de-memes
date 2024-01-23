@@ -11,6 +11,15 @@ body {
     height: 100vh;
     margin: 0;
     }
+body.dark-mode {
+    background-color: rgba(204, 50, 181, 0.651); /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    } 
+body.dark-mode aside {
+    background-color: rgba(204, 50, 181, 0.817); /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    } 
+    
 
 .titulo {
     text-align: center;
@@ -37,6 +46,12 @@ header {
     background-color: rgb(255, 205, 243);
     
 }
+
+body.dark-mode header {
+    background-color: rgba(204, 50, 181, 0.945); /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    }    
+
 .boton {
     height: 36px;
     display: flex;
@@ -49,6 +64,7 @@ header {
     border: none;
     border-radius: 12px;
 }
+
 .boton-contenedor :hover {
     background-color: #c38ed768;
 }
@@ -276,4 +292,13 @@ margin: 0 auto;
         margin-top: 20px;
         margin-left: 20px;
     
+}
+
+aside {
+    height: 100vh;
+    display: grid;
+    flex-flow: column wrap;
+    grid-area: aside;
+    background: var(--bgc-menu);
+    box-shadow: var(--box-shadow);
 }
