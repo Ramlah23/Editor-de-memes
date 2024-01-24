@@ -19,7 +19,7 @@ body.dark-mode aside {
     background-color: rgba(204, 50, 181, 0.817); /* Fondo oscuro */
     color: #ffffff; /* Texto claro */
     } 
-    
+ 
 
 .titulo {
     text-align: center;
@@ -120,6 +120,12 @@ p {
 
 /*PANEL IMAGEN*/
 
+
+.oculto {
+    display: none;
+  }
+
+
 .panel1 {
     width: 300px;
     height: 100%;
@@ -135,7 +141,7 @@ p {
     box-shadow: -10px 10px 100px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
-.boton-cerrar-panel {
+.ocultarColumnaButton {
     position: fixed;
     border-radius: 3px;
     cursor: pointer;
@@ -145,7 +151,7 @@ p {
     outline: 0;
 }
 .titulo-panel {
-    color:  rgb(217, 0, 255);
+    color: rgb(144 39 176);
     margin-top: 0;
     margin-bottom: 20px;
     width: 100%;
@@ -295,13 +301,9 @@ margin: 0 auto;
 }
 
 aside {
-    height: 100vh;
-    display: grid;
-    flex-flow: column wrap;
-    grid-area: aside;
-    background: var(--bgc-menu);
-    box-shadow: var(--box-shadow);
+    display: none;
 }
+
 
 /* TEXTO*/
 .contenedor-de-texto {
@@ -375,4 +377,5 @@ aside {
 .flex-container {
 margin-top: 17px;
 }
+
 
