@@ -145,6 +145,10 @@ botonCerrarPanel.addEventListener('click', () => {
     // Otras acciones que desees realizar al cerrar el panel
 });
 
+//TEXTO ------------------------------
+
+
+
 
 
 
