@@ -147,7 +147,72 @@ botonCerrarPanel.addEventListener('click', () => {
 
 //TEXTO ------------------------------
 
-
+document.addEventListener('DOMContentLoaded', function () {
+    const nombreTextArea = document.getElementById('nombre');
+    const bottomTextArea = document.getElementById('bottom-text-input');
+    const textoSuperior = document.querySelector('.contenedor-secundario .subtitulo:first-child');
+    const textoInferior = document.querySelector('.contenedor-secundario .subtitulo:last-child');
+  
+    // Función para actualizar el contenido de las secciones de texto
+    function actualizarTexto() {
+      textoSuperior.textContent = nombreTextArea.value;
+      textoInferior.textContent = bottomTextArea.value;
+    }
+  
+    // Escucha cambios en el área de texto superior
+    nombreTextArea.addEventListener('input', actualizarTexto);
+  
+    // Escucha cambios en el área de texto inferior
+    bottomTextArea.addEventListener('input', actualizarTexto);
+  
+    // Función para actualizar el estilo de las secciones de texto
+    function actualizarEstilo() {
+      const textContainer = document.querySelector('.contenedor-secundario');
+  
+      // Estilo de fuente
+      textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
+  
+      // Tamaño de fuente
+      textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+  
+      // Alineación de texto
+      const alineacion = document.querySelector('input[name="alineacion"]:checked').value;
+      textContainer.style.textAlign = alineacion;
+  
+      // Color de texto
+      const colorTexto = document.getElementById('text-color-input').value;
+      textContainer.style.color = colorTexto;
+  
+      // Color de fondo
+      const colorFondo = document.getElementById('color-de-texto').value;
+      textContainer.style.backgroundColor = colorFondo;
+  
+      // Fondo transparente
+      const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
+      textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
+  
+      // Contorno
+      const contorno = document.querySelector('input[name="contorno"]:checked').value;
+      textContainer.style.textShadow = contorno;
+  
+      // Espaciado
+      const espaciado = document.getElementById('contenido').value + 'px';
+      textContainer.style.padding = `0 ${espaciado}`;
+  
+      // Interlineado
+      const interlineado = document.getElementById('seleccion-de-lineado').value;
+      textContainer.style.lineHeight = interlineado;
+    }
+  
+    // Escucha cambios en los elementos de estilo
+    const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
+    elementosEstilo.forEach(function (elemento) {
+      elemento.addEventListener('input', actualizarEstilo);
+    });
+  
+    // Inicializar estilos
+    actualizarEstilo();
+  });
 
 
 
