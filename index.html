@@ -25,16 +25,16 @@
           </div>
     </header>
     <main class="contenedor-principal">
-        <div class="contenedor-secundario">
+        <div class="contenedor-secundario" id="contenedor-meme">
             <p class="subtitulo">TEXTO SUPERIOR</p>
         <div class="imagen-meme" src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
             <p class="subtitulo">TEXTO INFERIOR</p>
         </div>
         <div class="boton-contenedor">
-        <button class="boton-descargar" type="button" class="button button-text" id="download-meme-button"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Descargar meme</button>
+        <button class="boton-descargar" type="button" class="button button-text" id="descargar-meme-boton"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Descargar meme</button>
         </div>
     </main>
-
+ 
     <aside class="panel1" id="panel">
         <button class="ocultarColumnaButton" id="ocultarColumnaButton" aria-label="Cerrar panel">
           <i class="fas fa-times" aria-hidden="true"></i>
@@ -60,17 +60,17 @@
   
               <!--EDITOR DE COLORES DE IMAGEN -->
   
-        <div class="seccion-menu">
-          <h3 class="subtitulo-panel">Fondo</h3>
+    <div class="seccion-menu">
+      <h3 class="subtitulo-panel">Fondo</h3>
         <div class="dos-columnas">
-        <div class="columna-uno">
-          <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
+          <div class="columna-uno">
+            <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
             <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
                 <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
           </label>
         </div>
         <div class="columna-dos">
-      <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
+    <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
           <option value="unset">Ninguno</option>
           <option value="lighten">Aclarar</option>
           <option value="plus-lighter">Más Claro</option>
@@ -90,8 +90,9 @@
          </div>
        </div>
      </div>
-  
-  <!--FILTROS DE IMAGEN-->
+</div>
+
+<!--FILTROS DE IMAGEN-->
 
     <div class="section-menu">
       <h3 class="subtitulo-panel">Filtros</h3>
