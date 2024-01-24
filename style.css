@@ -302,3 +302,74 @@ aside {
     background: var(--bgc-menu);
     box-shadow: var(--box-shadow);
 }
+
+/* TEXTO*/
+.contenedor-de-texto {
+    border-radius: 10px;
+    background-color: rgba(226, 43, 198, 0.553);
+    margin-left: 50px;
+    
+}
+.contenedor-de-texto2 {
+    border-radius: 10px;
+    background-color: rgba(226, 43, 198, 0.553);
+    margin-left: 60px;
+    height: 25px;
+    text-align: center;
+    color: dimgray;
+    border: none;
+}
+.contenedor-de-texto3 {
+    border-radius: 10px;
+    background-color: rgba(226, 43, 198, 0.553);
+    margin-left: 50px;
+    height: 25px;
+    width: 20px;
+    text-align: center;
+    color: dimgray;
+    border: none;
+}
+.contenedor-de-texto4 {
+    border-radius: 10px;
+    background-color: rgba(226, 43, 198, 0.553);
+    margin-left: 50px;
+   
+    text-align: center;
+    color: dimgray;
+    border: none;
+}
+.contenedor-de-texto5{
+    border-radius: 10px;
+    background-color: rgba(226, 43, 198, 0.553);
+    margin-left: 20px;
+    height: 25px;
+    width: 50px;
+    text-align: center;
+    color: dimgray;
+    border: none;
+    display: center;
+}
+
+
+
+.circulo-selector2 {
+    height: 1.4em;
+    background-color: transparent;
+    clip-path: circle(25%);
+  }  
+
+.primer-ingreso-texto:hover{
+    background-color: #c38ed768;
+}
+.contenedor-alineacion:hover {
+    background-color: #c38ed768;
+}
+.columna-alineacion {
+    display: flex;
+   
+    flex-direction: column;
+}
+.color-hover :hover {
+    background-color: #c38ed768;
+}
+
