@@ -210,10 +210,10 @@
   
   <!--TAMAÑO DE LETRA-->
               
-  <div class="section-menu">
-  <div class="grid-cols-a">
-  <div class="col-grid-1">
-  <label for="text-size-input">
+  
+  
+  <div class="columna-tamaño">
+  <label for="texto-tamaño">
     <h3 class="subtitulo-panel">Tamaño</h3>
   </label>
   <div class="primer-ingreso-texto">
@@ -268,15 +268,13 @@
 <div class="col-grid-2">
   <h3 class="subtitulo-panel">Fondo</h3>
 <div class="color-hover">
-<label for="text-bcg-color" id="text-bgc-color-label" class="contenedor-de-texto4" tabindex="33">
-<img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="Text-background-color" type="color" id="text-bcg-color" class="circulo-selector2 " value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
+<label for="color-de-texto" id="color-de-texto-label" class="contenedor-de-texto4" tabindex="33">
+<img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="color-fondo-texto" type="color" id="color-de-texto" class="circulo-selector2 " value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
 <span id="text-background-color-value" aria-hidden="true">#FFFFFF</span>
 </label>
-<div class="one-input checkbox-container">
-<input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" aria-label="Quitar el fondo" tabindex="34">
-<label for="borrar-color-fondo">
-  <p>Fondo transparente </p>
-</label>
+<div class="flex-container panel-control-checkbox">
+  <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
+    transparente</label>
 </div>
       </div>
     </div> 
@@ -299,22 +297,22 @@
 <div class="section-menu">
 <div class="columna-espaciado">    
 
-  <label for="padding-input">
+  <label for="contenido">
     <h3 class="subtitulo-panel">Espaciado</h3>
   </label>
   <div class="color-hover">
-<input type="number" id="padding-input" class="contenedor-de-texto2" aria-label="Espaciado" min="10" max="50" value="35" tabindex="38">
+<input type="number" id="contenido" class="contenedor-de-texto2" aria-label="Espaciado" min="10" max="50" value="35" tabindex="38">
 </div>  
 </div>
   
 <!--SECCION DE LINEADO-->
   
 <div class="columna-interalineado">
-<label for="line-height-select">
+<label for="seleccion-de-lineado">
   <h3 class="subtitulo-panel">Interlineado</h3>
 </label>
 <div class="color-hover">
-<select id="line-height-select" class="contenedor-de-texto2" aria-label="Interlineado" tabindex="39">
+<select id="seleccion-de-lineado" class="contenedor-de-texto2" aria-label="Interlineado" tabindex="39">
 <option value="0.8">0.8</option>
 <option value="1">1</option>
 <option value="1.2" selected="">1.2</option>

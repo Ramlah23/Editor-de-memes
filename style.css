@@ -372,4 +372,7 @@ aside {
 .color-hover :hover {
     background-color: #c38ed768;
 }
+.flex-container {
+margin-top: 17px;
+}
 
