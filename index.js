@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     });
 
+//OCULTADO DE PANEL
+
+//Obtén referencia al botón y al panel que deseas ocultar
+const botonCerrarPanel = document.getElementById('ocultarColumnaButton');
+const panel = document.getElementById('panel'); 
+
+botonCerrarPanel.addEventListener('click', () => {
+    
+    panel.style.display = 'none'; 
+
+});
+
+//-------------IMAGEN---------------------
 // ACA ESTA EL PASO a PASO PARA PODER AGREGAR LA IMAGEN EN EL CONTENEDOR//
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -127,25 +140,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //DESCARGAR MEME//
 
+const $ = (id) => document.getElementById(id);
+const descargarMeme = () => {
+    domtoimage.toBlob($('contenedor-meme')).then(function (blob) {
+        saveAs(blob, 'mi-meme.png');
+    });
+}
+// Agrega un evento de clic al botón de descarga
+$('descargar-meme-boton').addEventListener('click', descargarMeme);
 
-//**NO PUEDE HACERLO  =(
 
 
-//OCULTADO DE PANEL
-
-//Obtén referencia al botón y al panel que deseas ocultar
-const botonCerrarPanel = document.getElementById('ocultarColumnaButton');
-const panel = document.getElementById('panel'); // Reemplaza 'nombreDeTuPanel' con el ID real de tu panel
-
-// Agrega un manejador de eventos clic al botón
-botonCerrarPanel.addEventListener('click', () => {
-    // Oculta el panel o realiza las acciones necesarias
-    panel.style.display = 'none'; // Puedes ajustar esto según cómo estés mostrando/ocultando tu panel
-
-    // Otras acciones que desees realizar al cerrar el panel
-});
-
-//TEXTO ------------------------------
+//------------------TEXTO ------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
     const nombreTextArea = document.getElementById('nombre');
@@ -158,11 +164,9 @@ document.addEventListener('DOMContentLoaded', function () {
       textoSuperior.textContent = nombreTextArea.value;
       textoInferior.textContent = bottomTextArea.value;
     }
-  
-    // Escucha cambios en el área de texto superior
+   
     nombreTextArea.addEventListener('input', actualizarTexto);
   
-    // Escucha cambios en el área de texto inferior
     bottomTextArea.addEventListener('input', actualizarTexto);
   
     // Función para actualizar el estilo de las secciones de texto

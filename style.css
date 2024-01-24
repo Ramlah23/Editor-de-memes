@@ -16,8 +16,8 @@ body.dark-mode {
     color: #ffffff; /* Texto claro */
     } 
 body.dark-mode aside {
-    background-color: rgba(204, 50, 181, 0.817); /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
+    background-color: #180015f0; 
+    color: #ffffff; 
     } 
  
 
@@ -48,8 +48,8 @@ header {
 }
 
 body.dark-mode header {
-    background-color: rgba(204, 50, 181, 0.945); /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
+    background-color: rgba(204, 50, 181, 0.945); 
+    color: #ffffff; 
     }    
 
 .boton {
