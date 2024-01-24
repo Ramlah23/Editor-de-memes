@@ -80,11 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const invertSlider = document.getElementById("invert-slider");
     const restablecerFiltrosButton = document.getElementById("restablecer-filtros");
 
-    // Agrega un listener al botón "Restablecer Filtros"
+   
     restablecerFiltrosButton.addEventListener("click", restablecerFiltros);
 
     function restablecerFiltros() {
-        // Restablece los valores de los sliders y el modo de mezcla a sus valores iniciales
         brightnessSlider.value = 1;
         opacitySlider.value = 1;
         contrastSlider.value = 100;
@@ -113,12 +112,12 @@ document.addEventListener("DOMContentLoaded", function() {
     saturateSlider.addEventListener("input", aplicarFiltrosYModoMezcla);
     invertSlider.addEventListener("input", aplicarFiltrosYModoMezcla);
 
-    // Agrega listeners al selector de color de fondo y al modo de mezcla
+    
     blendModeBgc.addEventListener("input", aplicarFiltrosYModoMezcla);
     blendModeSelect.addEventListener("input", aplicarFiltrosYModoMezcla);
 
     function aplicarFiltrosYModoMezcla() {
-        // Obtiene los valores de los sliders y el modo de mezcla
+        
         const brightnessValue = brightnessSlider.value;
         const opacityValue = opacitySlider.value;
         const contrastValue = contrastSlider.value;
@@ -131,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const blendModeBgcValue = blendModeBgc.value;
         const blendModeSelectValue = blendModeSelect.value;
 
-        // Aplica los filtros y el modo de mezcla al contenedor de imagen
+        
         imageContainer.style.filter = `brightness(${brightnessValue}) opacity(${opacityValue}) contrast(${contrastValue}%) blur(${blurValue}px) grayscale(${grayscaleValue}%) sepia(${sepiaValue}%) hue-rotate(${hueValue}deg) saturate(${saturateValue}%) invert(${invertValue})`;
         imageContainer.style.backgroundColor = blendModeBgcValue;
         imageContainer.style.mixBlendMode = blendModeSelectValue;
@@ -214,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
       elemento.addEventListener('input', actualizarEstilo);
     });
   
-    // Inicializar estilos
     actualizarEstilo();
   });
 
