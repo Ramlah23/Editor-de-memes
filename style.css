@@ -14,12 +14,12 @@ body {
 body.dark-mode {
     background-color: rgba(204, 50, 181, 0.651); /* Fondo oscuro */
     color: #ffffff; /* Texto claro */
-    } 
+    }
 body.dark-mode aside {
-    background-color: #180015f0; 
-    color: #ffffff; 
-    } 
- 
+    background-color: #180015f0;
+    color: #ffffff;
+    }
+
 
 .titulo {
     text-align: center;
@@ -44,13 +44,13 @@ body.dark-mode aside {
 
 header {
     background-color: rgb(255, 205, 243);
-    
+
 }
 
 body.dark-mode header {
-    background-color: rgba(204, 50, 181, 0.945); 
-    color: #ffffff; 
-    }    
+    background-color: rgba(204, 50, 181, 0.945);
+    color: #ffffff;
+    }
 
 .boton {
     height: 36px;
@@ -105,8 +105,8 @@ p {
 .imagen-meme {
     max-width: 100%;
     flex-grow: 1;
-    
-    
+
+
 }
 .boton-descargar {
     border-radius: 12px;
@@ -125,6 +125,9 @@ p {
     display: none;
   }
 
+aside.oculto {
+  display: none;
+}
 
 .panel1 {
     width: 300px;
@@ -191,7 +194,7 @@ p {
     margin: 0 auto;
     padding-top: 20px;
 }
-.columna-una {    
+.columna-una {
     width: 60%;
     height: 2.5em;
     display: flex;
@@ -219,7 +222,7 @@ p {
     font-family: 'Young Serif', serif;
     color:rgb(226, 43, 214);
     padding: 17px 50px;
-    
+
 }
 .dos-columnas {
 display: flex;
@@ -260,7 +263,7 @@ margin: 0 auto;
     height: 2.4em;
     background-color: transparent;
     clip-path: circle(25%);
-  }  
+  }
     .panel-control-select {
     position: relative;
     width: 100px;
@@ -288,7 +291,7 @@ margin: 0 auto;
 }
 
 #restablecer-filtros {
-    
+
         border-radius: 12px;
         height: 50px;
         width: 200px;
@@ -298,7 +301,7 @@ margin: 0 auto;
         border: none;
         margin-top: 20px;
         margin-left: 20px;
-    
+
 }
 
 aside {
@@ -311,7 +314,7 @@ aside {
     border-radius: 10px;
     background-color: rgba(226, 43, 198, 0.553);
     margin-left: 50px;
-    
+
 }
 .contenedor-de-texto2 {
     border-radius: 10px;
@@ -336,7 +339,7 @@ aside {
     border-radius: 10px;
     background-color: rgba(226, 43, 198, 0.553);
     margin-left: 50px;
-   
+
     text-align: center;
     color: dimgray;
     border: none;
@@ -359,7 +362,7 @@ aside {
     height: 1.4em;
     background-color: transparent;
     clip-path: circle(25%);
-  }  
+  }
 
 .primer-ingreso-texto:hover{
     background-color: #c38ed768;
@@ -369,7 +372,7 @@ aside {
 }
 .columna-alineacion {
     display: flex;
-   
+
     flex-direction: column;
 }
 .color-hover :hover {
