@@ -67,7 +67,7 @@
         <div class="dos-columnas">
           <div class="columna-uno">
             <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
-            <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
+            <img src="icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites: &quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
                 <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
           </label>
         </div>
@@ -143,7 +143,8 @@
    </section>
 
   <!-- PANEL DE TEXTO-->
-  <section class="panel-text oculto" id="panel-text">
+
+  <section class="panel-text" id="panel-text">
     <h2 class="titulo-panel">TEXTO</h2>
   <div class="contenedor-menu">
       <form id="txt-menu" method="post" enctype="multipart/form-data">
@@ -204,8 +205,6 @@
   
   <!--TAMAÑO DE LETRA-->
               
-  
-  
   <div class="columna-tamaño">
   <label for="texto-tamaño">
     <h3 class="subtitulo-panel">Tamaño</h3>
@@ -219,12 +218,10 @@
   
   <div class="columna-alineacion">
     <h3 class="subtitulo-panel">Alineación</h3>
-  <div class="contenedor-alineacion">
-    
+  <div class="contenedor-alineacion" id="Alineacion">
   <button type="button" class="contenedor-de-texto3" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
   <i class="fas fa-align-left" aria-hidden="true"></i>
   </button>
-  
   
   <button type="button" class="contenedor-de-texto3" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
   <i class="fas fa-align-center" aria-hidden="true"></i>
@@ -272,10 +269,10 @@
 </div>
       </div>
     </div> 
-  </div>
+   </div>
 </div>
 
-<!--OUTLINE SECTION-->
+<!--CONTORNO BORDE-->
 
 <div class="section-menu">
   <h3 class="subtitulo-panel">Contorno</h3>
@@ -286,7 +283,7 @@
   </div>
 </div>
               
-<!--CONTORNO BORDE-->
+<!--ESPACIADO-->
 
 <div class="section-menu">
 <div class="columna-espaciado">    
