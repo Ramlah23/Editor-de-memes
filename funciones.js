@@ -44,27 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
 //-------------IMAGEN---------------------
 // ACA ESTA EL PASO a PASO PARA PODER AGREGAR LA IMAGEN EN EL CONTENEDOR//
 
-document.addEventListener('DOMContentLoaded', function () {
-  const urlImgInput = document.getElementById('url-img-input');
-  const imageMeme = document.getElementById('image-meme');
+const contenedorMeme = document.querySelector('.imagen-meme');
+const urlInput = document.querySelector('#url-img-input'); // Cambiado el selector
+const filtrosInput = document.querySelector('#blend-mode-select'); // Cambiado el selector
 
-  // Función para cargar la imagen desde la URL
-    const cargarImagenDesdeURL = function () {
-      const url = urlImgInput.value.trim();
+const cargarImagen = () => {
+    const imageUrl = urlInput.value;
+    if (imageUrl) {
+        contenedorMeme.style.backgroundImage = `url('${imageUrl}')`;
+        contenedorMeme.style.mixBlendMode = filtrosInput.value; // Cambiado el estilo
+    }
+};
 
-      if (url !== '') {
-        imageMeme.style.backgroundImage = `url('${url}')`;
-      }
-    };
-    
-  // Evento al enviar el formulario de imagen
-    const imagenMenuForm = document.getElementById('imagen-menu');
-    imagenMenuForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    cargarImagenDesdeURL();
-    });
-});
-
+urlInput.addEventListener('input', cargarImagen);
+filtrosInput.addEventListener('change', cargarImagen);
 //ACA APLICARIA LOS COLORES FONDO Y FILTROS
 
 document.addEventListener("DOMContentLoaded", function() {
