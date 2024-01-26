@@ -105,9 +105,9 @@ p {
 .imagen-meme {
     max-width: 100%;
     flex-grow: 1;
-    
-    
+    background-size: cover
 }
+
 .boton-descargar {
     border-radius: 12px;
     height: 50px;
