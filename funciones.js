@@ -45,14 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // ACA ESTA EL PASO a PASO PARA PODER AGREGAR LA IMAGEN EN EL CONTENEDOR//
 
 const contenedorMeme = document.querySelector('.imagen-meme');
-const urlInput = document.querySelector('#url-img-input'); // Cambiado el selector
-const filtrosInput = document.querySelector('#blend-mode-select'); // Cambiado el selector
-
+const urlInput = document.querySelector('#url-img-input'); 
+const filtrosInput = document.querySelector('#blend-mode-select'); 
 const cargarImagen = () => {
     const imageUrl = urlInput.value;
     if (imageUrl) {
         contenedorMeme.style.backgroundImage = `url('${imageUrl}')`;
-        contenedorMeme.style.mixBlendMode = filtrosInput.value; // Cambiado el estilo
+        contenedorMeme.style.mixBlendMode = filtrosInput.value; 
     }
 };
 
@@ -92,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         blendModeBgc.value = "#FFFFFF";
         blendModeSelect.value = "unset";
 
-        // Aplica los filtros y el modo de mezcla al contenedor de imagen
+// Aplica los filtros y el modo de mezcla al contenedor de imagen
         aplicarFiltrosYModoMezcla();
     }
 
@@ -133,62 +132,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //DESCARGAR MEME//
-function downloadImage() {
-  // Get the element with the background image
-  const elementWithBackground = document.getElementById('image-meme');
 
-// Get the computed style to retrieve the background image URL
-const computedStyle = getComputedStyle(elementWithBackground);
-const backgroundImage = computedStyle.backgroundImage;
+document.addEventListener('DOMContentLoaded', function () {
+  // ... (tu código existente)
 
-// Extract the URL from the background image property (assuming it's a simple URL)
-const imageUrl = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
+  // Obtén referencias a los elementos necesarios
+  const descargarMemeBoton = document.getElementById('descargar-meme-boton');
+  const contenedorMeme = document.getElementById('contenedor-meme');
 
-// Create a new Image object
-const img = new Image();
+  // Función para descargar la imagen
+  const descargarMeme = () => {
+      // Usa la biblioteca dom-to-image para convertir el contenedor del meme en una imagen
+      domtoimage.toBlob(contenedorMeme)
+          .then(function (blob) {
+              // Usa FileSaver.js para descargar la imagen
+              saveAs(blob, 'meme.png');
+          });
+  };
 
-// Wait for the image to load
-img.onload = function () {
-    // Create a canvas element to draw the image
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    // Draw the image onto the canvas
-    context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-    // Convert the canvas content to a Blob
-    canvas.toBlob((blob) => {
-        if (blob) {
-            // Create a File object from the Blob
-            const file = new File([blob], 'downloaded_image.png', { type: 'image/png' });
-
-            // Create a download link
-            const link = document.createElement('a');
-
-            // Set up the link attributes using the File object
-            const url = URL.createObjectURL(file);
-            link.setAttribute('href', url);
-            link.setAttribute('download', file.name);
-            link.style.visibility = 'hidden';
-
-            // Append the link to the document, trigger the click, and remove the link
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Release the object URL
-            URL.revokeObjectURL(url);
-        } else {
-            console.error("Unable to generate blob from canvas.");
-        }
-    });
-};
-
-// Set the src attribute of the Image object to the extracted image URL
-img.src = imageUrl;
-}
+  // Agrega el evento de clic al botón de descarga
+  descargarMemeBoton.addEventListener('click', descargarMeme);
+});
 
 // Agrega un evento de clic al botón de descarga
 document.getElementById('descargar-meme-boton').addEventListener('click', downloadImage);
