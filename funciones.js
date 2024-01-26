@@ -134,27 +134,23 @@ document.addEventListener("DOMContentLoaded", function() {
 //DESCARGAR MEME//
 
 document.addEventListener('DOMContentLoaded', function () {
-  // ... (tu código existente)
-
-  // Obtén referencias a los elementos necesarios
+  
   const descargarMemeBoton = document.getElementById('descargar-meme-boton');
   const contenedorMeme = document.getElementById('contenedor-meme');
 
   // Función para descargar la imagen
   const descargarMeme = () => {
-      // Usa la biblioteca dom-to-image para convertir el contenedor del meme en una imagen
+      
       domtoimage.toBlob(contenedorMeme)
           .then(function (blob) {
-              // Usa FileSaver.js para descargar la imagen
+            
               saveAs(blob, 'meme.png');
           });
   };
-
-  // Agrega el evento de clic al botón de descarga
+ 
   descargarMemeBoton.addEventListener('click', descargarMeme);
 });
 
-// Agrega un evento de clic al botón de descarga
 document.getElementById('descargar-meme-boton').addEventListener('click', downloadImage);
 
 
