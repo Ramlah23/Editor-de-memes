@@ -1,3 +1,7 @@
+//*COMIENZO DE FUNCIONALIDAD*//
+
+// Declaración de variables globales
+
 let modoBoton = document.getElementById('modoBoton');
 let bodyElement = document.body;
 
@@ -22,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
       asidePanel.classList.add('oculto');
     });
   });
+
+
 
 //OCULTADO DE PANEL
 

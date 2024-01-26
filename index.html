@@ -11,21 +11,18 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="titulo">Generador de Memes</h1>
+      <h1 class="titulo">Generador de Memes</h1>
         <div class="boton-contenedor">
           <button class="boton" id="panel-img-boton">
-              <i class="fas fa-image" aria-hidden="true"></i> Imagen
+            <i class="fas fa-image" aria-hidden="true"></i> Imagen
           </button>
           <button class="boton" id="panel-text-boton">
             <i class="fas fa-font" aria-hidden="true"></i>Texto
           </button>
-
-          <button class="boton" id="modoBoton" class="modo-claro" >Modo Claro</button>
-          </button>
-          
-         </button>
-          </div>
+     <button class="boton" id="modoBoton" class="modo-claro" >Modo Claro</button>
+         </div>
     </header>
+
     <main class="contenedor-principal">
         <div class="contenedor-secundario" id="contenedor-meme">
             <p class="subtitulo">TEXTO SUPERIOR</p>
@@ -41,11 +38,13 @@
         <button class="ocultarColumnaButton" id="ocultarColumnaButton" aria-label="Cerrar panel">
           <i class="fas fa-times" aria-hidden="true"></i>
         </button>
-        <!-- IMAGEN PANEL-->
-        <section class="panel-img" id="panel-img">
-          <h2 class="titulo-panel">IMAGEN</h2>
-          <div class="contenedor-form">
-            <form id="imagen-menu" method="post" enctype="multipart/form-data">
+
+    <!-- IMAGEN PANEL-->
+
+  <section class="panel-img" id="panel-img">
+    <h2 class="titulo-panel">IMAGEN</h2>
+      <div class="contenedor-form">
+        <form id="imagen-menu" method="post" enctype="multipart/form-data">
 
   <!--AGREGAR IMAGEN PARA EDITAR-->
 
@@ -62,16 +61,16 @@
   
               <!--EDITOR DE COLORES DE IMAGEN -->
   
-    <div class="seccion-menu">
-      <h3 class="subtitulo-panel">Fondo</h3>
-        <div class="dos-columnas">
-          <div class="columna-uno">
-            <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
-            <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites: &quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
-                <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
-          </label>
+  <div class="seccion-menu">
+    <h3 class="subtitulo-panel">Fondo</h3>
+      <div class="dos-columnas">
+        <div class="columna-uno">
+          <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
+          <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites: &quot;" class="colorpick-eyedropper-input-trigger"><input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen." colorpick-eyedropper-active="true">
+              <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
+         </label>
         </div>
-        <div class="columna-dos">
+  <div class="columna-dos">
     <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
           <option value="unset">Ninguno</option>
           <option value="lighten">Aclarar</option>
@@ -134,13 +133,20 @@
       <label for="invert-slider" class="tipos-de-filtros">NEGATIVO</label>
       <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1" tabindex="20">
     </div>
-    <div class="boton-container">
+
+  <div class="boton-container">
       <button id="restablecer-filtros" type="button" tabindex="21">Reestablecer filtros</button>
     </div>
   </div>
       </form>
     </div>
    </section>
+
+   <aside class="panel2" id="panel">
+    <button class="ocultarColumnaButton" id="ocultarColumnaButton" aria-label="Cerrar panel">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+
 
   <!-- PANEL DE TEXTO-->
 
@@ -239,11 +245,6 @@
               
   <!--SECCION COLOR-->
               
-<div class="section-menu">
-  <div class="grid-cols-b">
-
-    <!--COLOR DE TEXTO-->
-
 <div class="columna-color">
   <h3 class="subtitulo-panel">Color</h3>
 <div class="color-hover">
@@ -256,7 +257,7 @@
                           
 <!--COLOR FONDO DE TEXTO-->
 
-<div class="col-grid-2">
+<div class="columna-fondo">
   <h3 class="subtitulo-panel">Fondo</h3>
 <div class="color-hover">
 <label for="color-de-texto" id="color-de-texto-label" class="contenedor-de-texto4" tabindex="33">
