@@ -12,27 +12,33 @@ modoBoton.addEventListener('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const panelImgButton  = document.getElementById('panel-img-boton');
-    const panelTextButton  = document.getElementById('panel-text-boton');
+  const panelImgButton = document.getElementById('panel-img-boton');
+  const panelTextButton = document.getElementById('panel-text-boton');
 
-    const asidePanel = document.getElementById("panel")
-    panelImgButton.addEventListener('click', function () {
-      asidePanel.classList.remove('oculto');
-    });
-    panelTextButton.addEventListener('click', function () {
-      asidePanel.classList.remove('oculto');
-    });
-    botonCerrarPanel.addEventListener('click', () => {
-      asidePanel.classList.add('oculto');
-    });
+  const panelImagen = document.getElementById("panel-imagen");
+  const panelTexto = document.getElementById("panel-texto");
+
+  panelImgButton.addEventListener('click', function () {
+    panelImagen.classList.remove('oculto');
+    panelTexto.classList.add('oculto');
   });
 
+  panelTextButton.addEventListener('click', function () {
+    panelTexto.classList.remove('oculto');
+    panelImagen.classList.add('oculto');
+  });
 
+  const botonCerrarPanelImg = document.getElementById('ocultarColumnaButtonImg');
+  const botonCerrarPanelText = document.getElementById('ocultarColumnaButtonText');
 
-//OCULTADO DE PANEL
+  botonCerrarPanelImg.addEventListener('click', () => {
+    panelImagen.classList.add('oculto');
+  });
 
-//Obtén referencia al botón y al panel que deseas ocultar
-const botonCerrarPanel = document.getElementById('ocultarColumnaButton');
+  botonCerrarPanelText.addEventListener('click', () => {
+    panelTexto.classList.add('oculto');
+  });
+});
 
 
 //-------------IMAGEN---------------------
