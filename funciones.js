@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
       textContainer.style.lineHeight = interlineado;
     }
   
-    // Escucha cambios en los elementos de estilo
+   
     const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
     elementosEstilo.forEach(function (elemento) {
       elemento.addEventListener('input', actualizarEstilo);
