@@ -174,73 +174,79 @@ document.addEventListener('DOMContentLoaded', function () {
 //------------------TEXTO ------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-    const nombreTextArea = document.getElementById('nombre');
-    const bottomTextArea = document.getElementById('bottom-text-input');
-    const textoSuperior = document.querySelector('.subtitulo + .contenedor-secundario');
-    const textoInferior = document.querySelector('.subtitulo2 + .contenedor-secundario');
+  const nombreTextArea = document.getElementById('nombre');
+  const bottomTextArea = document.getElementById('bottom-text-input');
+  const textoSuperiorContenedor = document.querySelector('.subtitulo');
+  const textoInferiorContenedor = document.querySelector('.subtitulo2');
 
+  // Función para actualizar el contenido de las secciones de texto
+  function actualizarTexto() {
+      textoSuperiorContenedor.textContent = nombreTextArea.value;
+      textoInferiorContenedor.textContent = bottomTextArea.value;
+  }
 
-    // Función para actualizar el contenido de las secciones de texto
-    function actualizarTexto() {
-      textoSuperior.textContent = nombreTextArea.value;
-      textoInferior.textContent = bottomTextArea.value;
-    }
-   
-    nombreTextArea.addEventListener('input', actualizarTexto);
-  
-    bottomTextArea.addEventListener('input', actualizarTexto);
+  // Agregar eventos de entrada para los campos de texto
+  nombreTextArea.addEventListener('input', actualizarTexto);
+  bottomTextArea.addEventListener('input', actualizarTexto);
 
-    
-  
-    // Función para actualizar el estilo de las secciones de texto
-    function actualizarEstilo() {
-      const textContainer = document.querySelector('.contenedor-secundario');
-  
-      // Estilo de fuente
-      textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
-  
-      // Tamaño de fuente
-      textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
-  
-      // Alineación de texto
-      const alineacion = document.querySelector('.contenedor-de-texto3').value;
-      textContainer.style.textAlign = alineacion;
-      
-      // Color de texto
-      const colorTexto = document.getElementById('text-color-label').value;
-      textContainer.style.color = colorTexto;
-  
-      // Color de fondo
-      const colorFondo = document.getElementById('color-de-texto-label').value;
-      textContainer.style.backgroundColor = colorFondo;
-  
-      // Fondo transparente
-      const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
-      textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
-  
-      // Contorno
-      const contorno = document.querySelector('.contenedor-de-texto5').value;
-      textContainer.style.textShadow = contorno;
-  
-      // Espaciado
-      const espaciado = document.getElementById('contenido').value + 'px';
-      textContainer.style.padding = `0 ${espaciado}`;
-  
-      // Interlineado
-      const interlineado = document.getElementById('seleccion-de-lineado').value;
-      textContainer.style.lineHeight = interlineado;
-    }
-  
-   
-    const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
-    elementosEstilo.forEach(function (elemento) {
-      elemento.addEventListener('input', actualizarEstilo);
-    });
-  
-    actualizarEstilo();
+  // Agregar evento para el botón "Quitar texto superior"
+  const removeTopTextCheckbox = document.getElementById('remove-top-text');
+  removeTopTextCheckbox.addEventListener('change', function () {
+      textoSuperiorContenedor.style.display = this.checked ? 'none' : 'block';
   });
 
+  // Agregar evento para el botón "Quitar texto inferior"
+  const removeBottomTextCheckbox = document.getElementById('remove-bottom-text');
+  removeBottomTextCheckbox.addEventListener('change', function () {
+      textoInferiorContenedor.style.display = this.checked ? 'none' : 'block';
+  });
 
+ 
+  // Función para actualizar el estilo de las secciones de texto
 
+function actualizarEstilo() {
+  const textContainer = document.querySelector('.contenedor-secundario');
 
-   
+  // Estilo de fuente
+  textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
+
+    // Tamaño de fuente
+  textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+
+    // Alineación de texto
+  const alineacion = document.querySelector('.contenedor-de-texto3').value;
+  textContainer.style.textAlign = alineacion;
+    
+    // Color de texto
+  const colorTexto = document.getElementById('text-color-label').value;
+  textContainer.style.color = colorTexto;
+
+    // Color de fondo
+  const colorFondo = document.getElementById('color-de-texto-label').value;
+  textContainer.style.backgroundColor = colorFondo;
+
+    // Fondo transparente
+  const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
+  textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
+
+    // Contorno
+  const contorno = document.querySelector('.contenedor-de-texto5').value;
+  textContainer.style.textShadow = contorno;
+
+    // Espaciado
+  const espaciado = document.getElementById('contenido').value + 'px';
+  textContainer.style.padding = `0 ${espaciado}`;
+
+    // Interlineado
+  const interlineado = document.getElementById('seleccion-de-lineado').value;
+  textContainer.style.lineHeight = interlineado;
+  }
+
+ 
+  const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
+  elementosEstilo.forEach(function (elemento) {
+    elemento.addEventListener('input', actualizarEstilo);
+  });
+
+  actualizarEstilo();
+});
