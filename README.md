@@ -4,7 +4,7 @@
 
 Este proyecto es un generador de memes interactivo que te permite personalizar el texto superior e inferior de un meme y descargar el resultado como una imagen.
 
-![Alt text](image0.png)
+![Alt text](imagenes/image0.png)
 
 ## Características
 
@@ -15,8 +15,8 @@ Este proyecto es un generador de memes interactivo que te permite personalizar e
 
 ## Capturas de Pantalla
 
-![Alt text](image-2.png)
-![Alt text](image-3.png)
+![!\[Alt text\](image.png)](imagenes/image2.png)
+![Alt text](imagenes/image-3.png)
 
 ## Instalación
 
