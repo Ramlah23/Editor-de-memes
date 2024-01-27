@@ -57,7 +57,21 @@ const cargarImagen = () => {
 
 urlInput.addEventListener('input', cargarImagen);
 filtrosInput.addEventListener('change', cargarImagen);
-//ACA APLICARIA LOS COLORES FONDO Y FILTROS
+
+//ACA APLICARIA LOS COLORES FONDO 
+
+function cambiarColorFondo() {
+  const fondoMeme = document.getElementById('image-meme');
+  const blendModeBgcInput = document.getElementById('blend-mode-bgc');
+
+  fondoMeme.style.backgroundColor = blendModeBgcInput.value;
+}
+
+//cambiar el fondo cuando se selecciona un nuevo color
+document.getElementById('blend-mode-bgc').addEventListener('input', cambiarColorFondo);
+
+
+//ACA APLICARIA LOS FILTROS
 
 document.addEventListener("DOMContentLoaded", function() {
     const imageContainer = document.getElementById("image-meme");
@@ -133,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //DESCARGAR MEME//
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
   
   const descargarMemeBoton = document.getElementById('descargar-meme-boton');
@@ -151,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
   descargarMemeBoton.addEventListener('click', descargarMeme);
 });
 
-document.getElementById('descargar-meme-boton').addEventListener('click', downloadImage);
+
 
 
 
@@ -160,9 +176,10 @@ document.getElementById('descargar-meme-boton').addEventListener('click', downlo
 document.addEventListener('DOMContentLoaded', function () {
     const nombreTextArea = document.getElementById('nombre');
     const bottomTextArea = document.getElementById('bottom-text-input');
-    const textoSuperior = document.querySelector('.contenedor-secundario .subtitulo:first-child');
-    const textoInferior = document.querySelector('.contenedor-secundario .subtitulo:last-child');
-  
+    const textoSuperior = document.querySelector('.subtitulo + .contenedor-secundario');
+    const textoInferior = document.querySelector('.subtitulo2 + .contenedor-secundario');
+
+
     // Función para actualizar el contenido de las secciones de texto
     function actualizarTexto() {
       textoSuperior.textContent = nombreTextArea.value;
@@ -172,6 +189,8 @@ document.addEventListener('DOMContentLoaded', function () {
     nombreTextArea.addEventListener('input', actualizarTexto);
   
     bottomTextArea.addEventListener('input', actualizarTexto);
+
+    
   
     // Función para actualizar el estilo de las secciones de texto
     function actualizarEstilo() {
@@ -184,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
       textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
   
       // Alineación de texto
-      const alineacion = document.querySelector('input[name="alineacion"]:checked').value;
+      const alineacion = document.querySelector('.contenedor-de-texto3').value;
       textContainer.style.textAlign = alineacion;
       
       // Color de texto
@@ -200,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
       textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
   
       // Contorno
-      const contorno = document.querySelector('input[name="contorno"]:checked').value;
+      const contorno = document.querySelector('.contenedor-de-texto5').value;
       textContainer.style.textShadow = contorno;
   
       // Espaciado

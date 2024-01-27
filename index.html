@@ -27,7 +27,7 @@
         <div class="contenedor-secundario" id="contenedor-meme">
             <p class="subtitulo">TEXTO SUPERIOR</p>
         <div class="imagen-meme" src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
-            <p class="subtitulo">TEXTO INFERIOR</p>
+            <p class="subtitulo2">TEXTO INFERIOR</p>
         </div>
         <div class="boton-contenedor">
         <button class="boton-descargar" type="button" class="button button-text" id="descargar-meme-boton"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Descargar meme</button>
@@ -134,6 +134,8 @@
       <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1" tabindex="20">
     </div>
 
+  <!--RESTABLECER FILTROS-->  
+
   <div class="boton-container">
       <button id="restablecer-filtros" type="button" tabindex="21">Reestablecer filtros</button>
     </div>
@@ -165,7 +167,7 @@
      <div class="primer-ingreso-texto">
       <textarea aria-label="Texto superior" class="contenedor-de-texto" id="nombre" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
         </div>
-  <div class="two-inputs remove-option">
+  <div class="dos-inputs remove-option">
   <div class="col-1 checkbox-container">
   <input type="checkbox" id="remove-top-text" tabindex="24">
     <label for="remove-top-text"> Quitar texto
@@ -223,6 +225,7 @@
 <!--ALINEACION DE TEXTO-->
   
   <div class="columna-alineacion">
+    
     <h3 class="subtitulo-panel">Alineación</h3>
   <div class="contenedor-alineacion" id="Alineacion">
   <button type="button" class="contenedor-de-texto3" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
@@ -237,7 +240,6 @@
   <button type="button" class="contenedor-de-texto3" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
   <i class="fas fa-align-right" aria-hidden="true"></i>
   </button>
-
         </div>
       </div>
     </div>
@@ -264,6 +266,9 @@
 <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="color-fondo-texto" type="color" id="color-de-texto" class="circulo-selector2 " value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
 <span id="text-background-color-value" aria-hidden="true">#FFFFFF</span>
 </label>
+
+<!--TRANSPARENTE-->
+
 <div class="flex-container panel-control-checkbox">
   <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
     transparente</label>
@@ -288,7 +293,6 @@
 
 <div class="section-menu">
 <div class="columna-espaciado">    
-
   <label for="contenido">
     <h3 class="subtitulo-panel">Espaciado</h3>
   </label>

@@ -103,13 +103,27 @@ body.dark-mode header {
     font-size: 44px;
 }
 
+.subtitulo2  {
+    width: 100%;
+    background: white;
+    text-align: center;
+    font-weight: 950;
+    font-family: Impact;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    position: static;
+    padding: 17px 50px;
+    font-size: 44px;
+}
+
 p {
     margin: 0;
 }
 .imagen-meme {
     max-width: 100%;
     flex-grow: 1;
-    background-size: cover
+    background-size: cover;
+    position: relative;
 }
 
 .boton-descargar {
@@ -299,7 +313,7 @@ margin: 0 auto;
     height: 2.4em;
     background-color: transparent;
     clip-path: circle(25%);
-  }  
+  }
 
 .panel-control-select {
     position: relative;
