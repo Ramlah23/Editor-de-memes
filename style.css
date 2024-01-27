@@ -37,6 +37,13 @@ body.dark-mode aside {
         font-size: 20px;
     }}
 
+@media (max-width: 600px) {
+    .imagen-meme {
+        width: 200px;
+        height: 300px;
+    }
+}
+
 .boton-contenedor {
     display: flex;
     justify-content: center;
