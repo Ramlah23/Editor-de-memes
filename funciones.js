@@ -45,20 +45,20 @@ document.addEventListener('DOMContentLoaded', function () {
 // ACA ESTA EL PASO a PASO PARA PODER AGREGAR LA IMAGEN EN EL CONTENEDOR//
 
 const contenedorMeme = document.querySelector('.imagen-meme');
-const urlInput = document.querySelector('#url-img-input'); 
-const filtrosInput = document.querySelector('#blend-mode-select'); 
+const urlInput = document.querySelector('#url-img-input');
+const filtrosInput = document.querySelector('#blend-mode-select');
 const cargarImagen = () => {
     const imageUrl = urlInput.value;
     if (imageUrl) {
         contenedorMeme.style.backgroundImage = `url('${imageUrl}')`;
-        contenedorMeme.style.mixBlendMode = filtrosInput.value; 
+        contenedorMeme.style.mixBlendMode = filtrosInput.value;
     }
 };
 
 urlInput.addEventListener('input', cargarImagen);
 filtrosInput.addEventListener('change', cargarImagen);
 
-//ACA APLICARIA LOS COLORES FONDO 
+//ACA APLICARIA LOS COLORES FONDO
 
 function cambiarColorFondo() {
   const fondoMeme = document.getElementById('image-meme');
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const invertSlider = document.getElementById("invert-slider");
     const restablecerFiltrosButton = document.getElementById("restablecer-filtros");
 
-   
+
     restablecerFiltrosButton.addEventListener("click", restablecerFiltros);
 
     function restablecerFiltros() {
@@ -120,12 +120,12 @@ document.addEventListener("DOMContentLoaded", function() {
     saturateSlider.addEventListener("input", aplicarFiltrosYModoMezcla);
     invertSlider.addEventListener("input", aplicarFiltrosYModoMezcla);
 
-    
+
     blendModeBgc.addEventListener("input", aplicarFiltrosYModoMezcla);
     blendModeSelect.addEventListener("input", aplicarFiltrosYModoMezcla);
 
     function aplicarFiltrosYModoMezcla() {
-        
+
         const brightnessValue = brightnessSlider.value;
         const opacityValue = opacitySlider.value;
         const contrastValue = contrastSlider.value;
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const blendModeBgcValue = blendModeBgc.value;
         const blendModeSelectValue = blendModeSelect.value;
 
-        
+
         imageContainer.style.filter = `brightness(${brightnessValue}) opacity(${opacityValue}) contrast(${contrastValue}%) blur(${blurValue}px) grayscale(${grayscaleValue}%) sepia(${sepiaValue}%) hue-rotate(${hueValue}deg) saturate(${saturateValue}%) invert(${invertValue})`;
         imageContainer.style.backgroundColor = blendModeBgcValue;
         imageContainer.style.mixBlendMode = blendModeSelectValue;
@@ -150,20 +150,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  
+
   const descargarMemeBoton = document.getElementById('descargar-meme-boton');
   const contenedorMeme = document.getElementById('contenedor-meme');
 
   // Función para descargar la imagen
   const descargarMeme = () => {
-      
+
       domtoimage.toBlob(contenedorMeme)
           .then(function (blob) {
-            
+
               saveAs(blob, 'meme.png');
           });
   };
- 
+
   descargarMemeBoton.addEventListener('click', descargarMeme);
 });
 
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
       textoInferiorContenedor.style.display = this.checked ? 'none' : 'block';
   });
 
- 
+
   // Función para actualizar el estilo de las secciones de texto
 
 function actualizarEstilo() {
@@ -211,12 +211,12 @@ function actualizarEstilo() {
   textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
 
     // Tamaño de fuente
-  textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+  textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
 
     // Alineación de texto
   const alineacion = document.querySelector('.contenedor-de-texto3').value;
   textContainer.style.textAlign = alineacion;
-    
+
     // Color de texto
   const colorTexto = document.getElementById('text-color-label').value;
   textContainer.style.color = colorTexto;
@@ -242,7 +242,7 @@ function actualizarEstilo() {
   textContainer.style.lineHeight = interlineado;
   }
 
- 
+
   const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
   elementosEstilo.forEach(function (elemento) {
     elemento.addEventListener('input', actualizarEstilo);
