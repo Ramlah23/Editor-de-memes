@@ -211,7 +211,7 @@ function actualizarEstilo() {
   textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
 
     // Tamaño de fuente
-  textContainer.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+  textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
 
     // Alineación de texto
   const alineacion = document.querySelector('.contenedor-de-texto3').value;
