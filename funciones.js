@@ -209,9 +209,10 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Estilo de fuente  *FUNCIONA*
     textoSuperiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
-  
+    textoInferiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
       // Tamaño de fuente *FUNCIONA*
     textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+    textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
   
       // Alineación de texto *NO FUNCIONA*
     const alineacion = document.querySelector('.contenedor-de-texto3').value;
