@@ -204,49 +204,49 @@ document.addEventListener('DOMContentLoaded', function () {
  
   // Función para actualizar el estilo de las secciones de texto
 
-function actualizarEstilo() {
-  const textContainer = document.querySelector('.contenedor-secundario');
-
-  // Estilo de fuente
-  textContainer.style.fontFamily = document.getElementById('text-fuente-family').value;
-
-    // Tamaño de fuente
-  textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
-
-    // Alineación de texto
-  const alineacion = document.querySelector('.contenedor-de-texto3').value;
-  textContainer.style.textAlign = alineacion;
-    
-    // Color de texto
-  const colorTexto = document.getElementById('text-color-label').value;
-  textContainer.style.color = colorTexto;
-
-    // Color de fondo
-  const colorFondo = document.getElementById('color-de-texto-label').value;
-  textContainer.style.backgroundColor = colorFondo;
-
-    // Fondo transparente
-  const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
-  textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
-
-    // Contorno
-  const contorno = document.querySelector('.contenedor-de-texto5').value;
-  textContainer.style.textShadow = contorno;
-
-    // Espaciado
-  const espaciado = document.getElementById('contenido').value + 'px';
-  textContainer.style.padding = `0 ${espaciado}`;
-
-    // Interlineado
-  const interlineado = document.getElementById('seleccion-de-lineado').value;
-  textContainer.style.lineHeight = interlineado;
-  }
-
- 
-  const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
-  elementosEstilo.forEach(function (elemento) {
-    elemento.addEventListener('input', actualizarEstilo);
+  function actualizarEstilo() {
+    const textContainer = document.querySelector('.contenedor-secundario');
+  
+    // Estilo de fuente  *FUNCIONA*
+    textoSuperiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
+  
+      // Tamaño de fuente *FUNCIONA*
+    textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
+  
+      // Alineación de texto *NO FUNCIONA*
+    const alineacion = document.querySelector('.contenedor-de-texto3').value;
+    textContainer.style.textAlign = alineacion;
+      
+      // Color de texto *NO FUNCIONA*
+    const colorTexto = document.getElementById('text-color-label').value;
+    textContainer.style.color = colorTexto;
+  
+      // Color de fondo *NO FUNCIONA*
+    const colorFondo = document.getElementById('color-de-texto-label').value;
+    textContainer.style.backgroundColor = colorFondo;
+  
+      // Fondo transparente *NO FUNCIONA*
+    const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
+    textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
+  
+      // Contorno *NO FUNCIONA*
+    const contorno = document.querySelector('.contenedor-de-texto5').value;
+    textContainer.style.textShadow = contorno;
+  
+      // Espaciado *FUNCIONA*
+    const espaciado = document.getElementById('contenido').value + 'px';
+    textContainer.style.padding = `0 ${espaciado}`;
+  
+      // Interlineado *FUNCIONA*
+    const interlineado = document.getElementById('seleccion-de-lineado').value;
+    textContainer.style.lineHeight = interlineado;
+    }
+  
+   
+    const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
+    elementosEstilo.forEach(function (elemento) {
+      elemento.addEventListener('input', actualizarEstilo);
+    });
+  
+    actualizarEstilo();
   });
-
-  actualizarEstilo();
-});
