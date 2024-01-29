@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Estilo de fuente  *FUNCIONA*
     textoSuperiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
     textoInferiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
+
       // Tamaño de fuente *FUNCIONA*
     textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
     textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
@@ -217,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Alineación de texto *NO FUNCIONA*
     const alineacion = document.querySelector('.contenedor-de-texto3').value;
     textContainer.style.textAlign = alineacion;
-      
+
       // Color de texto *NO FUNCIONA*
     const colorTexto = document.getElementById('text-color-label').value;
     textContainer.style.color = colorTexto;
@@ -226,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorFondo = document.getElementById('color-de-texto-label').value;
     textContainer.style.backgroundColor = colorFondo;
   
-      // Fondo transparente *NO FUNCIONA*
+      // Fondo transparente *FUNCIONA*
     const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
     textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
   
@@ -251,3 +252,4 @@ document.addEventListener('DOMContentLoaded', function () {
   
     actualizarEstilo();
   });
+
