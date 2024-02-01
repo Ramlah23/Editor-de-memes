@@ -44,8 +44,3 @@ Este proyecto es un generador de memes interactivo que te permite personalizar e
 Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
 
 # ¡MUCHAS GRACIAS!
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3032025fd7753ba2dd73601ade8a39af783ce8ab
