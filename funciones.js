@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
     textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
   
-      // Alineación de texto *NO FUNCIONA*
+      // Alineación de texto *FUNCIONA*
     // textContainer.querySelector('.subtitulo').style.textAlign = "right";
 
       // Color de texto *NO FUNCIONA*
