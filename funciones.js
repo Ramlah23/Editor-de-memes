@@ -216,8 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
   
       // Alineación de texto *NO FUNCIONA*
-    const alineacion = document.querySelector('.contenedor-de-texto3').value;
-    textContainer.style.textAlign = alineacion;
+    // textContainer.querySelector('.subtitulo').style.textAlign = "right";
 
       // Color de texto *NO FUNCIONA*
     const colorTexto = document.getElementById('text-color-label').value;
@@ -245,11 +244,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
    
-    const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto3, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
+    const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
     elementosEstilo.forEach(function (elemento) {
       elemento.addEventListener('input', actualizarEstilo);
     });
+
+    const elementosEstilo2 = ['#left-align-btn', '#center-align-btn', '#right-align-btn'];
+    elementosEstilo2.forEach(function (elemento) {
+      // elemento.addEventListener('click', actualizarEstilo);
+    });
   
-    actualizarEstilo();
+
+    document.querySelector('#left-align-btn').addEventListener('click', () => {
+      document.querySelector('.subtitulo').style.textAlign = "left";
+  });
+  
+  document.querySelector('#center-align-btn').addEventListener('click', () => {
+      document.querySelector('.subtitulo').style.textAlign = "center";
+  });
+  
+  document.querySelector('#right-align-btn').addEventListener('click', () => {
+      document.querySelector('.subtitulo').style.textAlign = "right";
+  });
+    
   });
 
