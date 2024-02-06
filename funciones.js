@@ -207,65 +207,114 @@ document.addEventListener('DOMContentLoaded', function () {
   function actualizarEstilo() {
     const textContainer = document.querySelector('.contenedor-secundario');
   
-    // Estilo de fuente  *FUNCIONA*
+  // ESTILO DE FUENTE
+
     textoSuperiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
     textoInferiorContenedor.style.fontFamily = document.getElementById('text-fuente-family').value;
 
-      // Tamaño de fuente *FUNCIONA*
+  // TAMAÑO DE FUENTE
+
     textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
     textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
-  
-      // Alineación de texto *FUNCIONA*
-    // textContainer.querySelector('.subtitulo').style.textAlign = "right";
+      
+  // COLOR DE FONDO
 
-      // Color de texto *NO FUNCIONA*
-    const colorTexto = document.getElementById('text-color-label').value;
-    textContainer.style.color = colorTexto;
+  const colorFondoInput = document.getElementById('color-de-texto');
+  const textoSuperior = document.querySelector('.subtitulo');
+  const textoInferior = document.querySelector('.subtitulo2');
+
+colorFondoInput.addEventListener('input', function() {
+  const colorFondo = colorFondoInput.value;
+  textoSuperior.style.backgroundColor = colorFondo;
+  textoInferior.style.backgroundColor = colorFondo;
+});
+
+  const colorInicial = colorFondoInput.value;
+  textoSuperior.style.backgroundColor = colorInicial;
+  textoInferior.style.backgroundColor = colorInicial;
   
-      // Color de fondo *NO FUNCIONA*
-    const colorFondo = document.getElementById('color-de-texto-label').value;
-    textContainer.style.backgroundColor = colorFondo;
-  
-      // Fondo transparente *FUNCIONA*
+  // FONDO TRANSPARENTE
+
     const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
     textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
   
-      // Contorno *NO FUNCIONA*
-    const contorno = document.querySelector('.contenedor-de-texto5').value;
-    textContainer.style.textShadow = contorno;
-  
-      // Espaciado *FUNCIONA*
+  // ESPACIADO
+
     const espaciado = document.getElementById('contenido').value + 'px';
     textContainer.style.padding = `0 ${espaciado}`;
   
-      // Interlineado *FUNCIONA*
+  // INTERALINEADO
+
     const interlineado = document.getElementById('seleccion-de-lineado').value;
     textContainer.style.lineHeight = interlineado;
     }
-  
    
     const elementosEstilo = document.querySelectorAll('.contenedor-de-texto, .contenedor-de-texto2, .contenedor-de-texto4, .contenedor-de-texto5, #text-no-background-checkbox');
     elementosEstilo.forEach(function (elemento) {
       elemento.addEventListener('input', actualizarEstilo);
     });
 
+  //ALINEACION DE TEXTO
+    // textContainer.querySelector('.subtitulo').style.textAlign = "right";
+
     const elementosEstilo2 = ['#left-align-btn', '#center-align-btn', '#right-align-btn'];
     elementosEstilo2.forEach(function (elemento) {
       // elemento.addEventListener('click', actualizarEstilo);
     });
   
-
     document.querySelector('#left-align-btn').addEventListener('click', () => {
       document.querySelector('.subtitulo').style.textAlign = "left";
+      document.querySelector('.subtitulo2').style.textAlign = "left";
   });
   
   document.querySelector('#center-align-btn').addEventListener('click', () => {
       document.querySelector('.subtitulo').style.textAlign = "center";
+      document.querySelector('.subtitulo2').style.textAlign = "center";
   });
   
   document.querySelector('#right-align-btn').addEventListener('click', () => {
       document.querySelector('.subtitulo').style.textAlign = "right";
+      document.querySelector('.subtitulo2').style.textAlign = "right";
   });
     
   });
 
+// COLOR DE TEXTO
+
+  const colorTextoInput = document.getElementById('text-color-input');
+  const textoSuperior = document.querySelector('.subtitulo');
+  const textoInferior = document.querySelector('.subtitulo2');
+
+colorTextoInput.addEventListener('input', function() {
+  const colorTexto = colorTextoInput.value;
+  textoSuperior.style.color = colorTexto;
+  textoInferior.style.color = colorTexto;
+});
+
+  const colorInicial = colorTextoInput.value;
+  textoSuperior.style.color = colorInicial;
+  textoInferior.style.color = colorInicial;
+
+// CONTORNO
+   
+  const elementosEstilo2 = ['#no-outline-btn', '#light-outline-btn', '#dark-outline-btn'];
+
+  elementosEstilo2.forEach(function (elemento) {
+   // elemento.addEventListener('click', actualizarEstilo);
+  });
+      
+  document.querySelector('#no-outline-btn').addEventListener('click', () => {
+  document.querySelector('.subtitulo').style.textShadow = "none"; // Sin contorno
+  document.querySelector('.subtitulo2').style.textShadow = "none"; // Sin contorno
+  });
+      
+  document.querySelector('#light-outline-btn').addEventListener('click', () => {
+  document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #fff"; // Contorno claro
+  document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #fff"; // Contorno claro
+  });
+      
+  document.querySelector('#dark-outline-btn').addEventListener('click', () => {
+  document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #000"; // Contorno oscuro
+  document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #000"; // Contorno oscuro
+      });
+     
