@@ -234,12 +234,12 @@ colorFondoInput.addEventListener('input', function() {
     const fondoTransparente = document.getElementById('text-no-background-checkbox').checked;
     textContainer.style.backgroundColor = fondoTransparente ? 'transparent' : colorFondo;
   
-  // ESPACIADO *NO FUNCIONA*
+  // ESPACIADO *NO FUNCIONA CORRECTAMENTE*
 
     const espaciado = document.getElementById('contenido').value + 'px';
     textContainer.style.padding = `0 ${espaciado}`;
   
-  // INTERALINEADO *NO FUNCIONA*
+  // INTERALINEADO *NO FUNCIONA CORRECTAMENTE*
 
     const interlineado = document.getElementById('seleccion-de-lineado').value;
     textContainer.style.lineHeight = interlineado;
