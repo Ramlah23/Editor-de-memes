@@ -214,35 +214,31 @@
   <!--TAMAÑO DE LETRA-->
               
   <div class="columna-tamaño">
-  <label for="texto-tamaño">
-    <h3 class="subtitulo-panel">Tamaño</h3>
-  </label>
-  <div class="primer-ingreso-texto">
-  <input type="number" name="font-size" aria-label="Tamaño de fuente" id="texto-tamaño" class="contenedor-de-texto2"  min="9" max="60" value="52" tabindex="28">
-</div>
-  </div>
-  
-<!--ALINEACION DE TEXTO-->
-  
-  <div class="columna-alineacion">
-    <h3 class="subtitulo-panel">Alineación</h3>
-  <div class="contenedor-alineacion" id="Alineacion">
-
-  <button type="button" class="contenedor-de-texto3" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
-  <i class="fas fa-align-left" aria-hidden="true"></i>
-  </button>
-  
-  <button type="button" class="contenedor-de-texto3" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
-  <i class="fas fa-align-center" aria-hidden="true"></i>
-  </button>
-
-  <button type="button" class="contenedor-de-texto3" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
-  <i class="fas fa-align-right" aria-hidden="true"></i>
-  </button>
-        </div>
-      </div>
+    <label for="texto-tamaño">
+      <h3 class="subtitulo-panel">Tamaño</h3>
+    </label>
+    <div class="primer-ingreso-texto">
+      <input type="number" name="font-size" aria-label="Tamaño de fuente" id="texto-tamaño" class="contenedor-de-texto2" min="9" max="60" value="52" tabindex="28">
     </div>
   </div>
+<!--ALINEACION DE TEXTO-->
+  
+<div class="columna-alineacion">
+  <h3 class="subtitulo-panel">Alineación</h3>
+  <div class="contenedor-alineacion" id="Alineacion">
+    <button type="button" class="contenedor-de-texto3" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
+      <i class="fas fa-align-left" aria-hidden="true"></i>
+    </button>
+
+    <button type="button" class="contenedor-de-texto3" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
+      <i class="fas fa-align-center" aria-hidden="true"></i>
+    </button>
+
+    <button type="button" class="contenedor-de-texto3" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
+      <i class="fas fa-align-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
               
   <!--SECCION COLOR-->
               
@@ -256,17 +252,19 @@
       </label>
     </div>
   </div>     
-         
+
 <!--COLOR FONDO DE TEXTO-->
 
 <div class="columna-fondo">
   <h3 class="subtitulo-panel">Fondo</h3>
-<div class="color-hover">
-<label for="color-de-texto" id="color-de-texto-label" class="contenedor-de-texto4" tabindex="33">
-<img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"><input name="color-fondo-texto" type="color" id="color-de-texto" class="circulo-selector2 " value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
-<span id="text-background-color-value" aria-hidden="true">#FFFFFF</span>
-</label>
-
+  <div class="color-hover">
+    <label for="color-de-texto" id="color-de-texto-label" class="contenedor-de-texto4" tabindex="33">
+      <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger">
+      <input name="color-fondo-texto" type="color" id="color-de-texto" class="circulo-selector2" value="#FFFFFF" aria-label="Color de fondo del texto" colorpick-eyedropper-active="true">
+      <span id="text-background-color-value" aria-hidden="true">#FFFFFF</span>
+    </label>
+  </div>
+</div>
 <!--TRANSPARENTE-->
 
 <div class="flex-container panel-control-checkbox">
@@ -282,10 +280,10 @@
 
 <div class="section-menu">
   <h3 class="subtitulo-panel">Contorno</h3>
-<div class="color-hover">
-<button type="button" class="contenedor-de-texto5" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
-<button type="button" class="contenedor-de-texto5" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
-<button type="button" class="contenedor-de-texto5" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
+  <div class="color-hover">
+    <button type="button" class="contenedor-de-texto5" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
+    <button type="button" class="contenedor-de-texto5" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
+    <button type="button" class="contenedor-de-texto5" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
   </div>
 </div>
               
@@ -304,25 +302,20 @@
 <!--SECCION DE LINEADO-->
   
 <div class="columna-interalineado">
-<label for="seleccion-de-lineado">
-  <h3 class="subtitulo-panel">Interlineado</h3>
-</label>
-<div class="color-hover">
-<select id="seleccion-de-lineado" class="contenedor-de-texto2" aria-label="Interlineado" tabindex="39">
-<option value="0.8">0.8</option>
-<option value="1">1</option>
-<option value="1.2" selected="">1.2</option>
-<option value="1.5">1.5</option>
-<option value="2">2</option>
-<option value="2.5">2.5</option>
-</select>
-</div>  
-</div>
+  <label for="seleccion-de-lineado">
+    <h3 class="subtitulo-panel">Interlineado</h3>
+  </label>
+  <div class="color-hover">
+    <select id="seleccion-de-lineado" class="contenedor-de-texto2" aria-label="Interlineado" tabindex="39">
+      <option value="0.8">0.8</option>
+      <option value="1">1</option>
+      <option value="1.2" selected="">1.2</option>
+      <option value="1.5">1.5</option>
+      <option value="2">2</option>
+      <option value="2.5">2.5</option>
+    </select>
   </div>
 </div>
-      </form>
-  </div>
-</aside>
 
 <script src="funciones.js"></script>
 </body>

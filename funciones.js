@@ -167,10 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
   descargarMemeBoton.addEventListener('click', descargarMeme);
 });
 
-
-
-
-
 //------------------TEXTO ------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
