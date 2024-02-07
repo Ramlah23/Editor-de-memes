@@ -10,30 +10,32 @@
     <title>Editor de memes</title>
 </head>
 <body>
-    <header class="header">
-      <h1 class="titulo">Generador de Memes</h1>
-        <div class="boton-contenedor">
-          <button class="boton" id="panel-img-boton">
+  <header class="header">
+    <h1 class="titulo">Generador de Memes</h1>
+    <div class="boton-contenedor">
+        <button class="boton" id="panel-img-boton">
             <i class="fas fa-image" aria-hidden="true"></i> Imagen
-          </button>
-          <button class="boton" id="panel-text-boton">
-            <i class="fas fa-font" aria-hidden="true"></i>Texto
-          </button>
-     <button class="boton" id="modoBoton" class="modo-claro" >Modo Claro</button>
-         </div>
-    </header>
+        </button>
+        <button class="boton" id="panel-text-boton">
+            <i class="fas fa-font" aria-hidden="true"></i> Texto
+        </button>
+        <button class="boton modo-claro" id="modoBoton">Modo Claro</button>
+    </div>
+</header>
 
-    <main class="contenedor-principal">
-        <div class="contenedor-secundario" id="contenedor-meme">
-            <p class="subtitulo">TEXTO SUPERIOR</p>
+<main class="contenedor-principal">
+    <div class="contenedor-secundario" id="contenedor-meme">
+        <p class="subtitulo">TEXTO SUPERIOR</p>
         <div class="imagen-meme" src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
-            <p class="subtitulo2">TEXTO INFERIOR</p>
-        </div>
-        <div class="boton-contenedor">
-        <button class="boton-descargar" type="button" class="button button-text" id="descargar-meme-boton"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Descargar meme</button>
-        </div>
-    </main>
+        <p class="subtitulo2">TEXTO INFERIOR</p>
+    </div>
     
+    <div class="boton-contenedor">
+        <button class="boton-descargar button button-text" type="button" id="descargar-meme-boton">
+            <i class="fas fa-download button-icon-text" aria-hidden="true"></i> Descargar meme
+        </button>
+    </div>
+</main>
     <!-- IMAGEN PANEL-->
 
   <aside class="panel1" id="panel-imagen">
@@ -54,7 +56,7 @@
     </div>
     <div class="ingreso-imagen">
       <div class="columna-una">
-        <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL" value="" tabindex="8">
+        <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL" value="" tabindex="9">
       </div>
     </div>
   </div>
@@ -268,12 +270,8 @@
 <!--TRANSPARENTE-->
 
 <div class="flex-container panel-control-checkbox">
-  <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
-    transparente</label>
-</div>
-      </div>
-    </div> 
-   </div>
+  <input type="checkbox" id="text-no-background-checkbox">
+  <label for="text-no-background-checkbox">Fondo transparente</label>
 </div>
 
 <!--CONTORNO -->
@@ -290,13 +288,14 @@
 <!--ESPACIADO-->
 
 <div class="section-menu">
-<div class="columna-espaciado">    
-  <label for="contenido">
-    <h3 class="subtitulo-panel">Espaciado</h3>
-  </label>
-  <div class="color-hover">
-<input type="number" id="contenido" class="contenedor-de-texto2" aria-label="Espaciado" min="10" max="50" value="35" tabindex="38">
-</div>  
+  <div class="columna-espaciado">
+      <label for="contenido">
+          <h3 class="subtitulo-panel">Espaciado</h3>
+      </label>
+      <div class="color-hover">
+          <input type="number" id="contenido" class="contenedor-de-texto2" aria-label="Espaciado" min="10" max="50" value="35" tabindex="38">
+      </div>  
+  </div>
 </div>
   
 <!--SECCION DE LINEADO-->
