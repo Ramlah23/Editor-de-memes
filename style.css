@@ -272,6 +272,7 @@ img {
     height: 2.2rem;
     font-family: 'Advent Pro', sans-serif;
     padding-left: 25px;
+    margin-top: 10px;
 }
 
 .subtitulo-panel  {
@@ -293,7 +294,7 @@ margin: 0 auto;
 
 .columna-uno{
     position: relative;
-    width: 100px;
+    width: 140px;
     height: 2.5em;
     display: flex;
     align-items: center;
@@ -320,6 +321,7 @@ margin: 0 auto;
     height: 2.4em;
     background-color: transparent;
     clip-path: circle(25%);
+    
   }
 
 .panel-control-select {
