@@ -1,210 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <title>Editor de memes</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1 class="titulo">Generador de Memes</h1>
-        <div class="boton-contenedor">
-            <button class="boton" id="panel-img-boton">
-                <i class="fas fa-image" aria-hidden="true"></i> Imagen
-            </button>
-            <button class="boton" id="panel-text-boton">
-                <i class="fas fa-font" aria-hidden="true"></i> Texto
-            </button>
-            <button class="boton modo-claro" id="modoBoton">Modo Claro</button>
-        </div>
+      <h1 class="titulo">Generador de Memes</h1>
+      <div class="boton-contenedor">
+        <button class="boton" id="panel-img-boton">
+          <i class="fas fa-image" aria-hidden="true"></i> Imagen
+        </button>
+        <button class="boton" id="panel-text-boton">
+          <i class="fas fa-font" aria-hidden="true"></i> Texto
+        </button>
+        <button class="boton modo-claro" id="modoBoton">Modo Claro</button>
+      </div>
     </header>
 
     <main class="contenedor-principal">
-        <div class="contenedor-secundario" id="contenedor-meme">
-            <p class="subtitulo">TEXTO SUPERIOR</p>
-            <div class="imagen-meme" src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
-            <p class="subtitulo2">TEXTO INFERIOR</p>
-        </div>
-        
-        <div class="boton-contenedor">
-            <button class="boton-descargar button button-text" type="button" id="descargar-meme-boton">
-                <i class="fas fa-download button-icon-text" aria-hidden="true"></i> Descargar meme
-            </button>
-        </div>
+      <div class="contenedor-secundario" id="contenedor-meme">
+        <p id="texto-superior" class="subtitulo">TEXTO SUPERIOR</p>
+        <div
+          class="imagen-meme"
+          src=""
+          alt=""
+          id="image-meme"
+          aria-label="Imagen de meme"
+        ></div>
+        <p id="texto-inferior" class="subtitulo2">TEXTO INFERIOR</p>
+      </div>
+
+      <div class="boton-contenedor">
+        <button
+          class="boton-descargar button button-text"
+          type="button"
+          id="descargar-meme-boton"
+        >
+          <i class="fas fa-download button-icon-text" aria-hidden="true"></i>
+          Descargar meme
+        </button>
+      </div>
     </main>
 
     <!-- IMAGEN PANEL-->
     <aside class="panel1" id="panel-imagen">
-        <button class="ocultarColumnaButton" id="ocultarColumnaButtonImg" aria-label="Cerrar panel">
-            <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
+      <button
+        class="ocultarColumnaButton"
+        id="ocultarColumnaButtonImg"
+        aria-label="Cerrar panel"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
 
-        <section class="panel-img" id="panel-img">
-            <h2 class="titulo-panel">IMAGEN</h2>
-            <div class="contenedor-form">
-                <form id="imagen-menu" method="post" enctype="multipart/form-data">
-                    <!--AGREGAR IMAGEN PARA EDITAR-->
-                    <div class="seccion-menu">
-                        <div class="texto-añadir-imagen">
-                            <p class="añadir-imagen">AÑADE TU IMAGEN</p>
-                        </div>
-                        <div class="ingreso-imagen">
-                            <div class="columna-una">
-                                <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL" value="" tabindex="9">
-                            </div>
-                        </div>
-                    </div>
+      <section class="panel-img" id="panel-img">
+        <h2 class="titulo-panel">IMAGEN</h2>
+        <div class="contenedor-form">
+          <form id="imagen-menu" method="post" enctype="multipart/form-data">
 
-                    <!--EDITOR DE COLORES DE IMAGEN -->
-                    <div class="seccion-menu">
-                        <h3 class="subtitulo-panel">Fondo</h3>
-                        <div class="dos-columnas">
-                            <div class="columna-uno">
-                                <label for="blend-mode-bgc" id="blend-mode-bgc-label" class="selector-de-color" tabindex="10">
-                                    <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger">
-                                    <input type="color" id="blend-mode-bgc" class="circulo-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
-                                    <span id="blend-mode-color-value" aria-hidden="true">#FFFFFF</span>
-                                </label>
-                            </div>
-                            <div class="columna-dos">
-                                <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
-                                    <option value="unset">Ninguno</option>
-                                    <option value="lighten">Aclarar</option>
-                                    <option value="plus-lighter">Más Claro</option>
-                                    <option value="hard-light">Luz Dura</option>
-                                    <option value="soft-light">Luz Suave</option>
-                                    <option value="darken">Oscurecer</option>
-                                    <option value="difference">Diferencia</option>
-                                    <option value="luminosity">Luminosidad</option>
-                                    <option value="multiply">Multiplicar</option>
-                                    <option value="overlay">Superponer</option>
-                                    <option value="color-dodge">Color Esquivado</option>
-                                    <option value="color-burn">Color quemado</option>
-                                    <option value="exclusion">Exclusión</option>
-                                    <option value="saturation">Saturación</option>
-                                    <option value="hue">Matiz</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+            <!--AGREGAR IMAGEN PARA EDITAR-->
 
-                    <!--FILTROS DE IMAGEN-->
-                    <div class="seccion-menu">
-                        <h3 class="subtitulo-panel">Filtros</h3>
-                        <div class="lista">
-                            <label for="brightness-slider" class="tipos-de-filtros">BRILLO</label>
-                            <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
-                        </div>
-                        <div class="lista">
-                            <label for="opacity-slider" class="tipos-de-filtros">OPACIDAD</label>
-                            <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
-                        </div>
-                        <div class="lista">
-                            <label for="contrast-slider" class="tipos-de-filtros">CONTRASTE</label>
-                            <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1" tabindex="14">
-                        </div>
-                        <div class="lista">
-                            <label for="blur-slider" class="tipos-de-filtros">DESENFOQUE</label>
-                            <input type="range" id="blur-slider" min="0" max="10" value="0" step="0.1" tabindex="15">
-                        </div>
-                        <div class="lista">
-                            <label for="grayscale-slider" class="tipos-de-filtros">ESCALA DE GRISES</label>
-                            <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1" tabindex="16">
-                        </div>
-                        <div class="lista">
-                            <label for="sepia-slider" class="tipos-de-filtros">SEPIA</label>
-                            <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1" tabindex="17">
-                        </div>
-                        <div class="lista">
-                            <label for="hue-slider" class="tipos-de-filtros">HUE</label>
-                            <input type="range" id="hue-slider" min="0" max="359" value="0" step="1" tabindex="18">
-                        </div>
-                        <div class="lista">
-                            <label for="saturate-slider" class="tipos-de-filtros">SATURADO</label>
-                            <input type="range" id="saturate-slider" min="100" max="1000" value="100" step="10" tabindex="19">
-                        </div>
-                        <div class="lista">
-                            <label for="invert-slider" class="tipos-de-filtros">NEGATIVO</label>
-                            <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1" tabindex="20">
-                        </div>
-                        <!--RESTABLECER FILTROS-->  
-                        <div class="boton-container">
-                            <button id="restablecer-filtros" type="button" tabindex="21">Restablecer filtros</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="seccion-menu">
+              <div class="texto-añadir-imagen">
+                <p class="añadir-imagen">AÑADE TU IMAGEN</p>
+              </div>
+              <div class="ingreso-imagen">
+                <div class="columna-una">
+                  <input
+                    type="text"
+                    id="url-img-input"
+                    class="input-text"
+                    aria-label="URL de imagen"
+                    placeholder="Ingresa una URL"
+                    value=""
+                    tabindex="9"
+                  />
+                </div>
+              </div>
             </div>
-        </section>
+
+            <!--EDITOR DE COLORES DE IMAGEN -->
+
+            <div class="seccion-menu">
+              <h3 class="subtitulo-panel">Fondo</h3>
+              <div class="dos-columnas">
+                <div class="columna-uno">
+                  <label
+                    for="blend-mode-bgc"
+                    id="blend-mode-bgc-label"
+                    class="selector-de-color"
+                    tabindex="10"
+                  >
+                    <img
+                      src="imagenes/icon16.png"
+                      title='Select with ColorPick Eyedropper - See advanced option: "Add ColorPick Eyedropper near input[type=color] fields on websites"'
+                      class="colorpick-eyedropper-input-trigger"
+                    />
+                    <input
+                      type="color"
+                      id="blend-mode-bgc"
+                      class="circulo-selector"
+                      name="color"
+                      value="#FFFFFF"
+                      aria-label="Color de fondo de imagen."
+                    />
+                    <span id="blend-mode-color-value" aria-hidden="true"
+                      >#FFFFFF</span
+                    >
+                  </label>
+                </div>
+                <div class="columna-dos">
+                  <select
+                    aria-label="Modo de mezcla de fondo de imagen"
+                    id="blend-mode-select"
+                    class="panel-control-select"
+                    tabindex="11"
+                  >
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="plus-lighter">Más Claro</option>
+                    <option value="hard-light">Luz Dura</option>
+                    <option value="soft-light">Luz Suave</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
+                    <option value="overlay">Superponer</option>
+                    <option value="color-dodge">Color Esquivado</option>
+                    <option value="color-burn">Color quemado</option>
+                    <option value="exclusion">Exclusión</option>
+                    <option value="saturation">Saturación</option>
+                    <option value="hue">Matiz</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!--FILTROS DE IMAGEN-->
+
+            <div class="seccion-menu">
+              <h3 class="subtitulo-panel">Filtros</h3>
+              <div class="lista">
+                <label for="brightness-slider" class="tipos-de-filtros"
+                  >BRILLO</label
+                >
+                <input
+                  type="range"
+                  id="brightness-slider"
+                  min="0"
+                  max="1"
+                  value="1"
+                  step="0.1"
+                  tabindex="12"
+                />
+              </div>
+              <div class="lista">
+                <label for="opacity-slider" class="tipos-de-filtros"
+                  >OPACIDAD</label
+                >
+                <input
+                  type="range"
+                  id="opacity-slider"
+                  min="0"
+                  max="1"
+                  value="1"
+                  step="0.1"
+                  tabindex="13"
+                />
+              </div>
+              <div class="lista">
+                <label for="contrast-slider" class="tipos-de-filtros"
+                  >CONTRASTE</label
+                >
+                <input
+                  type="range"
+                  id="contrast-slider"
+                  min="100"
+                  max="1000"
+                  value="100"
+                  step="1"
+                  tabindex="14"
+                />
+              </div>
+              <div class="lista">
+                <label for="blur-slider" class="tipos-de-filtros"
+                  >DESENFOQUE</label
+                >
+                <input
+                  type="range"
+                  id="blur-slider"
+                  min="0"
+                  max="10"
+                  value="0"
+                  step="0.1"
+                  tabindex="15"
+                />
+              </div>
+              <div class="lista">
+                <label for="grayscale-slider" class="tipos-de-filtros"
+                  >ESCALA DE GRISES</label
+                >
+                <input
+                  type="range"
+                  id="grayscale-slider"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="1"
+                  tabindex="16"
+                />
+              </div>
+              <div class="lista">
+                <label for="sepia-slider" class="tipos-de-filtros">SEPIA</label>
+                <input
+                  type="range"
+                  id="sepia-slider"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="1"
+                  tabindex="17"
+                />
+              </div>
+              <div class="lista">
+                <label for="hue-slider" class="tipos-de-filtros">HUE</label>
+                <input
+                  type="range"
+                  id="hue-slider"
+                  min="0"
+                  max="359"
+                  value="0"
+                  step="1"
+                  tabindex="18"
+                />
+              </div>
+              <div class="lista">
+                <label for="saturate-slider" class="tipos-de-filtros"
+                  >SATURADO</label
+                >
+                <input
+                  type="range"
+                  id="saturate-slider"
+                  min="100"
+                  max="1000"
+                  value="100"
+                  step="10"
+                  tabindex="19"
+                />
+              </div>
+              <div class="lista">
+                <label for="invert-slider" class="tipos-de-filtros"
+                  >NEGATIVO</label
+                >
+                <input
+                  type="range"
+                  id="invert-slider"
+                  min="0"
+                  max="1"
+                  value="0"
+                  step="0.1"
+                  tabindex="20"
+                />
+              </div>
+
+              <!--RESTABLECER FILTROS-->
+
+              <div class="boton-container">
+                <button id="restablecer-filtros" type="button" tabindex="21">
+                  Restablecer filtros
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
     </aside>
 
-    <!-- PANEL DE TEXTO-->
+    <!--PANEL DE TEXTO-->
+
     <aside class="panel1" id="panel-texto">
-        <button class="ocultarColumnaButton" id="ocultarColumnaButtonText" aria-label="Cerrar panel">
-            <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
+      <button
+        class="ocultarColumnaButton"
+        id="ocultarColumnaButtonText"
+        aria-label="Cerrar panel"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
 
-        <section class="panel-text" id="panel-text">
-            <h2 class="titulo-panel">TEXTO</h2>
-            <div class="contenedor-menu">
-                <form id="txt-menu" method="post" enctype="multipart/form-data">
-                    <!-- ESCRIBIR TEXTO-->
-                    <div class="seccion-menu">
-                        <div class="texto-añadir-texto">
-                            <p class="añadir-texto">AÑADE TU TEXTO</p>
-                        </div>
-                        <div class="ingreso-texto">
-                            <input type="text" id="top-text-input" class="input-text" placeholder="Texto superior" tabindex="22">
-                            <input type="text" id="bottom-text-input" class="input-text" placeholder="Texto inferior" tabindex="23">
-                        </div>
-                    </div>
+      <section class="panel-text" id="panel-text">
+        <h2 class="titulo-panel">TEXTO</h2>
+        <div class="contenedor-menu">
+          <form id="txt-menu" method="post" enctype="multipart/form-data">
 
-                    <!-- ESTILOS DE TEXTO -->
-                    <div class="seccion-menu">
-                        <h3 class="subtitulo-panel">Estilos de texto</h3>
-                        <div class="dos-columnas">
-                            <div class="columna-uno">
-                                <label for="text-color" id="text-color-label" class="selector-de-color" tabindex="24">
-                                    <img src="imagenes/icon16.png" title="Select with ColorPick Eyedropper" class="colorpick-eyedropper-input-trigger">
-                                    <input type="color" id="text-color" class="circulo-selector" name="color" value="#000000" aria-label="Color de texto.">
-                                    <span id="text-color-value" aria-hidden="true">#000000</span>
-                                </label>
-                            </div>
-                            <div class="columna-dos">
-                                <select aria-label="Fuente de texto" id="font-select" class="panel-control-select" tabindex="25">
-                                    <option value="Arial">Arial</option>
-                                    <option value="Helvetica">Helvetica</option>
-                                    <option value="Times New Roman">Times New Roman</option>
-                                    <option value="Courier New">Courier New</option>
-                                    <option value="Verdana">Verdana</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+            <!-- ESCRIBIR TEXTO-->
 
-                    <!-- TAMAÑO Y ALINEACIÓN DE TEXTO -->
-                    <div class="seccion-menu">
-                        <h3 class="subtitulo-panel">Tamaño y alineación</h3>
-                        <div class="dos-columnas">
-                            <div class="columna-uno">
-                                <input type="range" id="text-size-slider" min="10" max="100" value="20" step="1" tabindex="26">
-                            </div>
-                            <div class="columna-dos">
-                                <select aria-label="Alineación de texto" id="text-align-select" class="panel-control-select" tabindex="27">
-                                    <option value="left">Izquierda</option>
-                                    <option value="center">Centro</option>
-                                    <option value="right">Derecha</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+            <div class="seccion-menu">
+              <div class="texto-añadir-texto">
+                <p class="añadir-texto">AÑADE TU TEXTO</p>
+              </div>
+              <div class="ingreso-texto">
+                <input
+                  type="text"
+                  id="top-text-input"
+                  class="input-text"
+                  placeholder="Texto superior"
+                  tabindex="22"
+                />
+                <input
+                  type="text"
+                  id="bottom-text-input"
+                  class="input-text"
+                  placeholder="Texto inferior"
+                  tabindex="23"
+                />
+              </div>
             </div>
-        </section>
+
+            <!-- ESTILOS DE TEXTO -->
+
+            <!--COLOR DE LETRA-->
+
+            <div class="seccion-menu">
+              <h3 class="subtitulo-panel">Estilos de texto</h3>
+              <div class="dos-columnas">
+                <div class="columna-uno">
+                  <label
+                    for="text-color"
+                    id="text-color-label"
+                    class="selector-de-color"
+                    tabindex="24"
+                  >
+                    <img
+                      src="imagenes/icon16.png"
+                      title="Select with ColorPick Eyedropper"
+                      class="colorpick-eyedropper-input-trigger"
+                    />
+                    <input
+                      type="color"
+                      id="text-color"
+                      class="circulo-selector"
+                      name="color"
+                      value="#000000"
+                      aria-label="Color de texto."
+                    />
+                    <span id="text-color-value" aria-hidden="true"
+                      >#000000</span
+                    >
+                  </label>
+                </div>
+
+                <!--TIPO DE LETRA-->
+
+                <div class="columna-dos">
+                  <select
+                    aria-label="Fuente de texto"
+                    id="font-select"
+                    class="panel-control-select"
+                    tabindex="25"
+                  >
+                    <option value="Arial">Arial</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAMAÑO DE TEXTO -->
+
+        <div class="dos-columnas">
+            <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-select" id="texto-tamaño" min="12" value="40" />
+
+                <!-- ALINEACIÓN DE TEXTO -->
+
+                <div class="botones-container botons-aliniamiento">
+                    <button class="button button-default" id="text-left-align-button"
+                      aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                    <button class="button button-default" id="text-center-align-button"
+                      aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                    <button class="button button-default" id="text-right-align-button"
+                      aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                  </div>
+            </div>
+ 
+          </form>
+           <!-- 
+             COLOR DE FONDO
+             -->
+             <div class="columna-1">
+                <h3 class="subtitulo-panel">FONDO</h3>
+                <div class="selector-de-color">
+                  <input 
+                 class="circulo-selector" name="Color de fondo de texto" type="color" id="Fondo-color-input" value="#FFFFFF" aria-label="Color de fondo de texto" />
+                  <span id="Fondo-color" aria-hidden="true">#FFFFFF</span>
+                </div>
+              </div>
+            </div>
+            <!--
+           TRANSPARENTE
+          -->
+            <div class="flex-container panel-control-checkbox">
+              <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
+                transparente</label>
+            </div>
+          
+          <!--
+           CONTORNO
+          -->
+          <div class="conteiner-contorno">
+            <h3 class="subtitulo-panel">CONTORNO</h3>
+            <div class="botones-container">
+              <button class="boton boton-botton" id="no-outline-button">Ninguno</button>
+              <button class="boton boton-botton" id="light-outline-button">Claro</button>
+              <button class="boton boton-botton" id="dark-outline-button">Oscuro</button>
+            </div>
+          </div>
+          <!--
+            ESPACIADO 
+          -->
+          <div class="conteiner-contorno">
+            <h3 class="subtitulo-panel">ESPACIADO</h3>
+            <input type="number" id="padding-input" class="columna-uno columna-uno-contorno" aria-label="Espaciado" min="10" max="50"
+              value="35">
+          </div>
+          <!--
+            INTERLINEADO 
+          -->
+          <div class="conteiner-contorno">
+            <h3 class="subtitulo-panel">INTERLINEADO</h3>
+            <select id="line-height-input" class="columna-uno columna-uno-contorno" aria-label="Interlineado">
+              <option value="0.8">0.8</option>
+              <option value="1">1</option>
+              <option value="1.2" selected>1.2</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+            </select>
+          </div>
+        </div>
+      </section>
     </aside>
     <script src="funciones.js"></script>
-</body>
+  </body>
 </html>

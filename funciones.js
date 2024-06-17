@@ -185,37 +185,52 @@ document.addEventListener('DOMContentLoaded', function () {
     nombreTextArea.addEventListener('input', actualizarTexto);
     bottomTextArea.addEventListener('input', actualizarTexto);
 
-    // Agregar evento para el botón "Quitar texto superior"
-    const removeTopTextCheckbox = document.getElementById('remove-top-text');
-    removeTopTextCheckbox.addEventListener('change', function () {
-        textoSuperiorContenedor.style.display = this.checked ? 'none' : 'block';
-    });
-
-    // Agregar evento para el botón "Quitar texto inferior"
-    const removeBottomTextCheckbox = document.getElementById('remove-bottom-text');
-    removeBottomTextCheckbox.addEventListener('change', function () {
-        textoInferiorContenedor.style.display = this.checked ? 'none' : 'block';
-    });
-
+   
 
     // Función para actualizar el estilo de las secciones de texto
 
     function actualizarEstilo() {
         const textContainer = document.querySelector('.contenedor-secundario');
 
-        // ESTILO DE FUENTE
+        // ESTILO DE FUENTE OK
 
-        textoSuperiorContenedor.style.fontFamily = document.getElementById('font-select').value;
-        textoInferiorContenedor.style.fontFamily = document.getElementById('font-select').value;
+        function actualizarEstilo() {
+    const selectedFont = document.getElementById('font-select').value;
+    const textoSuperiorContenedor = document.querySelector('.subtitulo');
+    const textoInferiorContenedor = document.querySelector('.subtitulo2');
+
+    textoSuperiorContenedor.style.fontFamily = selectedFont;
+    textoInferiorContenedor.style.fontFamily = selectedFont;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const fontSelect = document.getElementById('font-select');
+
+    if (fontSelect) {
+        fontSelect.addEventListener('change', actualizarEstilo);
+    }
+});
 
         // TAMAÑO DE FUENTE
 
-        textoSuperiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
-        textoInferiorContenedor.style.fontSize = document.getElementById('texto-tamaño').value + 'px';
-
+        document.addEventListener('DOMContentLoaded', () => {
+            const textSizeInput = document.getElementById('texto-tamaño');
+        
+            if (!textSizeInput) {
+                console.error('Elemento no encontrado: #texto-tamaño');
+            } else {
+                textSizeInput.addEventListener('change', actualizarTamañoTexto);
+            }
+        
+            function actualizarTamañoTexto() {
+                const textSize = textSizeInput.value + 'px';
+                document.getElementById('texto-superior').style.fontSize = textSize;
+                document.getElementById('texto-inferior').style.fontSize = textSize;
+            }
+        });
         // COLOR DE FONDO
 
-        const colorFondoInput = document.getElementById('text-color');
+        const colorFondoInput = document.getElementById('Fondo-color-input');
         const textoSuperior = document.querySelector('.subtitulo');
         const textoInferior = document.querySelector('.subtitulo2');
 
@@ -253,31 +268,31 @@ document.addEventListener('DOMContentLoaded', function () {
     //ALINEACION DE TEXTO
     // textContainer.querySelector('.subtitulo').style.textAlign = "right";
 
-    const elementosEstilo2 = ['#left-align-btn', '#center-align-btn', '#right-align-btn'];
-    elementosEstilo2.forEach(function (elemento) {
+    const elementosEstilo2 = ['#text-align-select'];
+    elementosEstilo2.forEach(function () {
         // elemento.addEventListener('click', actualizarEstilo);
     });
 
-    document.querySelector('#left-align-btn').addEventListener('click', () => {
-        document.querySelector('.subtitulo').style.textAlign = "left";
-        document.querySelector('.subtitulo2').style.textAlign = "left";
+    document.querySelector('#left').addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textAlign = "fas fa-align-left";
+        document.querySelector('.subtitulo2').style.textAlign = "fas fa-align-left";
     });
 
-    document.querySelector('#center-align-btn').addEventListener('click', () => {
-        document.querySelector('.subtitulo').style.textAlign = "center";
-        document.querySelector('.subtitulo2').style.textAlign = "center";
+    document.querySelector('#center').addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textAlign = "fas fa-align-center";
+        document.querySelector('.subtitulo2').style.textAlign = "fas fa-align-center";
     });
 
-    document.querySelector('#right-align-btn').addEventListener('click', () => {
-        document.querySelector('.subtitulo').style.textAlign = "right";
-        document.querySelector('.subtitulo2').style.textAlign = "right";
+    document.querySelector('#right').addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textAlign = "fas fa-align-right";
+        document.querySelector('.subtitulo2').style.textAlign = "fas fa-align-right";
     });
 
 });
 
-// COLOR DE TEXTO
+// COLOR DE TEXTO OK
 
-const colorTextoInput = document.getElementById('text-color-input');
+const colorTextoInput = document.getElementById('text-color');
 const textoSuperior = document.querySelector('.subtitulo');
 const textoInferior = document.querySelector('.subtitulo2');
 
@@ -291,25 +306,44 @@ const colorInicial = colorTextoInput.value;
 textoSuperior.style.color = colorInicial;
 textoInferior.style.color = colorInicial;
 
-// CONTORNO
+// CONTORNO OK
 
-const elementosEstilo2 = ['#no-outline-btn', '#light-outline-btn', '#dark-outline-btn'];
+document.addEventListener('DOMContentLoaded', () => {
+    // Referencias a los botones de contorno
+    const noOutlineButton = document.getElementById('no-outline-button');
+    const lightOutlineButton = document.getElementById('light-outline-button');
+    const darkOutlineButton = document.getElementById('dark-outline-button');
+    const fontSelect = document.getElementById('font-select');
+    
+    // Asegurarse de que los elementos existen
+    if (!noOutlineButton || !lightOutlineButton || !darkOutlineButton || !fontSelect) {
+        console.error('Uno o más elementos no se encontraron en el DOM.');
+        return;
+    }
 
-elementosEstilo2.forEach(function (elemento) {
-    // elemento.addEventListener('click', actualizarEstilo);
-});
+    // Añadir event listeners a los botones de contorno
+    noOutlineButton.addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textShadow = "none";
+        document.querySelector('.subtitulo2').style.textShadow = "none";
+    });
 
-document.querySelector('#no-outline-btn').addEventListener('click', () => {
-    document.querySelector('.subtitulo').style.textShadow = "none"; // Sin contorno
-    document.querySelector('.subtitulo2').style.textShadow = "none"; // Sin contorno
-});
+    lightOutlineButton.addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #fff";
+        document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #fff";
+    });
 
-document.querySelector('#light-outline-btn').addEventListener('click', () => {
-    document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #fff"; // Contorno claro
-    document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #fff"; // Contorno claro
-});
+    darkOutlineButton.addEventListener('click', () => {
+        document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #000";
+        document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #000";
+    });
 
-document.querySelector('#dark-outline-btn').addEventListener('click', () => {
-    document.querySelector('.subtitulo').style.textShadow = "1px 1px 1px #000"; // Contorno oscuro
-    document.querySelector('.subtitulo2').style.textShadow = "1px 1px 1px #000"; // Contorno oscuro
+    // Función para actualizar el estilo de las secciones de texto
+    function actualizarEstilo() {
+        const selectedFont = fontSelect.value;
+        document.querySelector('.subtitulo').style.fontFamily = selectedFont;
+        document.querySelector('.subtitulo2').style.fontFamily = selectedFont;
+    }
+
+    // Añadir event listener para el cambio de fuente de texto
+    fontSelect.addEventListener('change', actualizarEstilo);
 });
