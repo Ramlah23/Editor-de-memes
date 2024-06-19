@@ -65,7 +65,6 @@
         <h2 class="titulo-panel">IMAGEN</h2>
         <div class="contenedor-form">
           <form id="imagen-menu" method="post" enctype="multipart/form-data">
-
             <!--AGREGAR IMAGEN PARA EDITAR-->
 
             <div class="seccion-menu">
@@ -298,155 +297,202 @@
       <section class="panel-text" id="panel-text">
         <h2 class="titulo-panel">TEXTO</h2>
         <div class="contenedor-menu">
-          <form id="txt-menu" method="post" enctype="multipart/form-data">
+          <form
+            id="txt-menu"
+            method="post"
+            enctype="multipart/form-data"
+          ></form>
+          <!-- ESCRIBIR TEXTO-->
 
-            <!-- ESCRIBIR TEXTO-->
+          <div class="seccion-menu">
+            <div class="texto-añadir-texto">
+              <p class="añadir-texto">AÑADE TU TEXTO</p>
+            </div>
+            <div class="ingreso-texto">
+              <input
+                type="text"
+                id="top-text-input"
+                class="input-text"
+                placeholder="Texto superior"
+                tabindex="22"
+              />
+              <input
+                type="text"
+                id="bottom-text-input"
+                class="input-text"
+                placeholder="Texto inferior"
+                tabindex="23"
+              />
+            </div>
+          </div>
 
-            <div class="seccion-menu">
-              <div class="texto-añadir-texto">
-                <p class="añadir-texto">AÑADE TU TEXTO</p>
+          <!-- ESTILOS DE TEXTO -->
+
+          <!--COLOR DE LETRA-->
+
+          <div class="seccion-menu">
+            <h3 class="subtitulo-panel">Estilos de texto</h3>
+            <div class="dos-columnas">
+              <div class="columna-uno">
+                <label
+                  for="text-color"
+                  id="text-color-label"
+                  class="selector-de-color"
+                  tabindex="24"
+                >
+                  <img
+                    src="imagenes/icon16.png"
+                    title="Select with ColorPick Eyedropper"
+                    class="colorpick-eyedropper-input-trigger"
+                  />
+                  <input
+                    type="color"
+                    id="text-color"
+                    class="circulo-selector"
+                    name="color"
+                    value="#000000"
+                    aria-label="Color de texto."
+                  />
+                  <span id="text-color-value" aria-hidden="true">#000000</span>
+                </label>
               </div>
-              <div class="ingreso-texto">
-                <input
-                  type="text"
-                  id="top-text-input"
-                  class="input-text"
-                  placeholder="Texto superior"
-                  tabindex="22"
-                />
-                <input
-                  type="text"
-                  id="bottom-text-input"
-                  class="input-text"
-                  placeholder="Texto inferior"
-                  tabindex="23"
-                />
+
+              <!--TIPO DE LETRA-->
+
+              <div class="columna-dos">
+                <select
+                  aria-label="Fuente de texto"
+                  id="font-select"
+                  class="panel-control-select"
+                  tabindex="25"
+                >
+                  <option value="Arial">Arial</option>
+                  <option value="Helvetica">Helvetica</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="Verdana">Verdana</option>
+                </select>
               </div>
             </div>
+          </div>
 
-            <!-- ESTILOS DE TEXTO -->
+          <!-- TAMAÑO DE TEXTO -->
 
-            <!--COLOR DE LETRA-->
+          <div class="dos-columnas">
+            <input
+              type="number"
+              name="Tamaño de fuente"
+              aria-label="Tamaño de fuente"
+              class="panel-control-select"
+              id="texto-tamaño"
+              min="12"
+              value="40"
+            />
 
-            <div class="seccion-menu">
-              <h3 class="subtitulo-panel">Estilos de texto</h3>
-              <div class="dos-columnas">
-                <div class="columna-uno">
-                  <label
-                    for="text-color"
-                    id="text-color-label"
-                    class="selector-de-color"
-                    tabindex="24"
-                  >
-                    <img
-                      src="imagenes/icon16.png"
-                      title="Select with ColorPick Eyedropper"
-                      class="colorpick-eyedropper-input-trigger"
-                    />
-                    <input
-                      type="color"
-                      id="text-color"
-                      class="circulo-selector"
-                      name="color"
-                      value="#000000"
-                      aria-label="Color de texto."
-                    />
-                    <span id="text-color-value" aria-hidden="true"
-                      >#000000</span
-                    >
-                  </label>
-                </div>
+            <!-- ALINEACIÓN DE TEXTO -->
 
-                <!--TIPO DE LETRA-->
-
-                <div class="columna-dos">
-                  <select
-                    aria-label="Fuente de texto"
-                    id="font-select"
-                    class="panel-control-select"
-                    tabindex="25"
-                  >
-                    <option value="Arial">Arial</option>
-                    <option value="Helvetica">Helvetica</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Verdana">Verdana</option>
-                  </select>
-                </div>
-              </div>
+            <div class="botones-container botons-aliniamiento">
+              <button
+                class="button button-default"
+                id="text-left-align-button"
+                aria-label="Alinear texto a la izquierda"
+              >
+                <i class="fas fa-align-left" aria-hidden="true"></i>
+              </button>
+              <button
+                class="button button-default"
+                id="text-center-align-button"
+                aria-label="Alinear texto al centro"
+              >
+                <i class="fas fa-align-center" aria-hidden="true"></i>
+              </button>
+              <button
+                class="button button-default"
+                id="text-right-align-button"
+                aria-label="Alineat texto a la derecha"
+              >
+                <i class="fas fa-align-right" aria-hidden="true"></i>
+              </button>
             </div>
+          </div>
 
-            <!-- TAMAÑO DE TEXTO -->
-
-        <div class="dos-columnas">
-            <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-select" id="texto-tamaño" min="12" value="40" />
-
-                <!-- ALINEACIÓN DE TEXTO -->
-
-                <div class="botones-container botons-aliniamiento">
-                    <button class="button button-default" id="text-left-align-button"
-                      aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                    <button class="button button-default" id="text-center-align-button"
-                      aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                    <button class="button button-default" id="text-right-align-button"
-                      aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
-                  </div>
-            </div>
- 
-          </form>
-           <!-- 
+          <!-- 
              COLOR DE FONDO
              -->
-             <div class="columna-1">
-                <h3 class="subtitulo-panel">FONDO</h3>
-                <div class="selector-de-color">
-                  <input 
-                 class="circulo-selector" name="Color de fondo de texto" type="color" id="Fondo-color-input" value="#FFFFFF" aria-label="Color de fondo de texto" />
-                  <span id="Fondo-color" aria-hidden="true">#FFFFFF</span>
-                </div>
-              </div>
+          <div class="columna-1">
+            <h3 class="subtitulo-panel">FONDO</h3>
+            <div class="selector-de-color">
+              <input
+                class="circulo-selector"
+                name="Color de fondo de texto"
+                type="color"
+                id="Fondo-color-input"
+                value="#FFFFFF"
+                aria-label="Color de fondo de texto"
+              />
+              <span id="Fondo-color" aria-hidden="true">#FFFFFF</span>
             </div>
-            <!--
+          </div>
+        </div>
+        <!--
            TRANSPARENTE
           -->
-            <div class="flex-container panel-control-checkbox">
-              <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
-                transparente</label>
-            </div>
-          
-          <!--
-           CONTORNO
+        <div class="flex-container panel-control-checkbox">
+          <input type="checkbox" id="text-no-background-checkbox" /><label
+            for="text-no-background-checkbox"
+            >Fondo transparente</label
+          >
+        </div>
+
+        <!--
+           CONTORNO 
           -->
-          <div class="conteiner-contorno">
-            <h3 class="subtitulo-panel">CONTORNO</h3>
-            <div class="botones-container">
-              <button class="boton boton-botton" id="no-outline-button">Ninguno</button>
-              <button class="boton boton-botton" id="light-outline-button">Claro</button>
-              <button class="boton boton-botton" id="dark-outline-button">Oscuro</button>
-            </div>
+        <div class="conteiner-contorno">
+          <h3 class="subtitulo-panel">CONTORNO</h3>
+          <div class="botones-container">
+            <button class="boton boton-botton" id="no-outline-button">
+              Ninguno
+            </button>
+            <button class="boton boton-botton" id="light-outline-button">
+              Claro
+            </button>
+            <button class="boton boton-botton" id="dark-outline-button">
+              Oscuro
+            </button>
           </div>
-          <!--
+        </div>
+        <!--
             ESPACIADO 
           -->
-          <div class="conteiner-contorno">
-            <h3 class="subtitulo-panel">ESPACIADO</h3>
-            <input type="number" id="padding-input" class="columna-uno columna-uno-contorno" aria-label="Espaciado" min="10" max="50"
-              value="35">
-          </div>
-          <!--
+        <div class="conteiner-contorno">
+          <h3 class="subtitulo-panel">ESPACIADO</h3>
+          <input
+            type="number"
+            id="contenido"
+            class="columna-uno columna-uno-contorno"
+            aria-label="Espaciado"
+            min="10"
+            max="50"
+            value="35"
+          />
+        </div>
+        <!--
             INTERLINEADO 
           -->
-          <div class="conteiner-contorno">
-            <h3 class="subtitulo-panel">INTERLINEADO</h3>
-            <select id="line-height-input" class="columna-uno columna-uno-contorno" aria-label="Interlineado">
-              <option value="0.8">0.8</option>
-              <option value="1">1</option>
-              <option value="1.2" selected>1.2</option>
-              <option value="1.5">1.5</option>
-              <option value="2">2</option>
-              <option value="2.5">2.5</option>
-            </select>
-          </div>
+        <div class="conteiner-contorno">
+          <h3 class="subtitulo-panel">INTERLINEADO</h3>
+          <select
+            id="seleccion-de-lineado"
+            class="columna-uno columna-uno-contorno"
+            aria-label="Interlineado"
+          >
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2" selected>1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+          </select>
         </div>
       </section>
     </aside>
