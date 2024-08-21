@@ -28,7 +28,7 @@ body.dark-mode aside {
   font-weight: 600;
   margin: 10px;
   letter-spacing: -1px;
-  color: rgb(255 0 247 / 97%);
+  
   font-family: "Young Serif", serif;
 }
 
@@ -65,7 +65,7 @@ body.dark-mode header {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  background: rgb(255, 205, 243);
+  background-color: transparent;
   font-size: 18px;
   color: black;
   border: none;
@@ -84,6 +84,7 @@ body.dark-mode header {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  margin-top: 30px;
 }
 
 .contenedor-secundario {
@@ -184,7 +185,7 @@ aside.oculto {
 }
 
 .titulo-panel {
-  color: rgb(144 39 176);
+ 
   margin-top: 0;
   margin-bottom: 20px;
   width: 100%;
@@ -212,7 +213,7 @@ aside.oculto {
 
 .añadir-imagen {
   font-family: "Young Serif", serif;
-  color: rgb(226, 43, 214);
+ 
   text-align: center;
 }
 
@@ -263,28 +264,18 @@ img {
   padding: 0 6px 0 0;
   cursor: pointer;
 }
-.input-text {
-  border-radius: 10px;
-  border: hotpink;
-  background-color: rgba(226, 43, 198, 0.553);
-  color: var(--clr-light);
-  box-shadow: var(--box-shadow);
-  height: 2.2rem;
-  font-family: "Advent Pro", sans-serif;
-  padding-left: 25px;
-  margin-top: 10px;
-}
+
 
 .subtitulo-panel {
   width: 100%;
   text-align: center;
   font-family: "Young Serif", serif;
-  color: rgb(226, 43, 214);
+
   padding: 17px 50px;
 }
 .dos-columnas {
   display: flex;
-  flex-flow: column wrap;
+
   justify-content: center;
   align-items: center;
   height: 2.5em;
@@ -293,7 +284,7 @@ img {
 
 .columna-uno {
   position: relative;
-  width: 140px;
+  width: 100%;
   height: 2.5em;
   display: flex;
   align-items: center;
@@ -333,7 +324,8 @@ img {
   border-radius: 10px;
   border-style: groove;
   background-color: rgba(238, 130, 224, 0.792);
-  text-align: center
+  text-align: center;
+  left: 8px;
 }
 
 .tipos-de-filtros {
@@ -360,7 +352,7 @@ img {
   border: none;
   margin-top: 20px;
   margin-left: 20px;
-  color: dimgray;
+ 
 }
 
 #restablecer-filtros:hover {
@@ -368,6 +360,7 @@ img {
 }
 
 /* TEXTO*/
+
 .contenedor-de-texto {
   border-radius: 10px;
   background-color: rgba(226, 43, 198, 0.553);
@@ -437,6 +430,19 @@ img {
   background-color: #c38ed768;
 }
 
+.input-text {
+  border-radius: 10px;
+  border: hotpink;
+  background-color: rgba(226, 43, 198, 0.553);
+  color: var(--clr-light);
+  box-shadow: var(--box-shadow);
+  height: 2.2rem;
+  font-family: "Advent Pro", sans-serif;
+  padding-left: 25px;
+  margin-top: 10px;
+  width: 100%;
+}
+
 .circulo-selector2 {
   height: 1.4em;
   background-color: transparent;
@@ -451,7 +457,10 @@ img {
   display: flex;
   flex-direction: column;
 }
-
+.subtitulo3 {
+ padding-bottom: 5px;
+  text-align: center;
+}
 .color-hover :hover {
   background-color: #c38ed768;
 }
@@ -470,7 +479,7 @@ img {
   border-color: rgba(238, 130, 224, 0.792);
   border-radius: 10px;
   border-style: groove;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .flex-container {
@@ -508,6 +517,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5px;
+  width: 100%;
 }
 .boton-botton:hover {
   background-color: #c38ed768;
@@ -521,7 +531,7 @@ img {
   width: 100%;
   text-align: center;
   font-family: "Young Serif", serif;
-  color: rgb(226, 43, 214);
+  
   padding: 17px 50px;
 }
 
@@ -530,7 +540,7 @@ img {
   font-size: 15px;
   color: black;
   text-align: center;
-  margin-left: 80px;
+ 
 }
 
 .botones-container .button:first-child {
@@ -545,7 +555,7 @@ img {
 .botons-aliniamiento {
     width: calc(50% - 2.5px);
     justify-content: space-between;
-    margin-left: 2.5px;
+    margin-left: 15px;
 }
 .botones-container {
     display: flex;
@@ -558,12 +568,13 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     border-color: rgba(238, 130, 224, 0.792);
     border-radius: 10px;
     border-style: groove;
     background-color: rgba(238, 130, 224, 0.792);
+    margin-top: 30px;
   
 }
 

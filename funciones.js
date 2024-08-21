@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ).checked;
     textContainer.style.backgroundColor = fondoTransparente
       ? "transparent"
-      : colorFondo;
+      : colorFondoInput.value;
 
     // ESPACIADO *NO FUNCIONA *
 
