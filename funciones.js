@@ -1,5 +1,3 @@
-//*COMIENZO DE FUNCIONALIDAD*//
-
 // Declaración de variables globales
 
 let modoBoton = document.getElementById("modoBoton");
@@ -190,28 +188,42 @@ document.addEventListener("DOMContentLoaded", function () {
   function actualizarEstilo() {
     const textContainer = document.querySelector(".contenedor-secundario");
 
-    // COLOR DE FONDO //NO FUNCIONA
+    // COLOR DE FONDO Y FONDO TRANSPARENTE OK
 
-    const colorFondoInput = document.getElementById("Fondo-color-input");
-    const textoSuperior = document.querySelector(".subtitulo");
-    const textoInferior = document.querySelector(".subtitulo2");
+    const fondoTransparenteCheckbox = document.getElementById("text-no-background-checkbox");
+const colorFondoInput = document.getElementById("Fondo-color-input");
+const textoSuperior = document.getElementById("texto-superior");
+const textoInferior = document.getElementById("texto-inferior");
 
-    colorFondoInput.addEventListener("input", function () {
-      const fondoColor = fondoColorInput.value;
-      textoSuperior.style.backgroundColor = fondoColor;
-      textoInferior.style.backgroundColor = fondoColor;
-    });
+// Escuchar el cambio en el checkbox para fondo transparente
+fondoTransparenteCheckbox.addEventListener("change", function () {
+  const esTransparente = fondoTransparenteCheckbox.checked;
 
-    // FONDO TRANSPARENTE OK
+  if (esTransparente) {
+    // Si el checkbox está marcado, el fondo se hace transparente
+    textoSuperior.style.backgroundColor = "transparent";
+    textoInferior.style.backgroundColor = "transparent";
+  } else {
+    // Si no está marcado, se aplica el color seleccionado del input
+    const fondoColor = colorFondoInput.value; // Definir fondoColor aquí
+    textoSuperior.style.backgroundColor = fondoColor;
+    textoInferior.style.backgroundColor = fondoColor;
+  }
+});
 
-    const fondoTransparente = document.getElementById(
-      "text-no-background-checkbox"
-    ).checked;
-    textContainer.style.backgroundColor = fondoTransparente
-      ? "transparent"
-      : colorFondo;
+// Escuchar los cambios en el input de color para aplicar el color de fondo
+colorFondoInput.addEventListener("input", function () {
+  const fondoColor = colorFondoInput.value; // Definir fondoColor aquí también
+  const esTransparente = fondoTransparenteCheckbox.checked;
 
-    // ESPACIADO *NO FUNCIONA *
+  if (!esTransparente) {
+    // Si el checkbox no está marcado, aplicar el color seleccionado
+    textoSuperior.style.backgroundColor = fondoColor;
+    textoInferior.style.backgroundColor = fondoColor;
+  }
+});
+
+    // ESPACIADO *NO FUNCIONA BIEN*
 
     const espaciado = document.getElementById("contenido").value + "px";
     textContainer.style.padding = `0 ${espaciado}`;
